@@ -9,16 +9,41 @@
     "Pre-freeze sweep, please."
   ],
   "should_not_trigger": [
-    "Critique the argument in \u00a74.",
+    "Critique the argument in §4.",
     "Write the assumptions annex.",
     "Review my Terraform module.",
-    "Check this essay for AI-sounding phrases."
+    "Check this essay for AI-sounding phrases.",
+    "Add an assumption to the register.",
+    "Write the milestone plan for the client.",
+    "Is [HHB-CNT-01] acceptable against its brief?",
+    "Bump the architecture to 0.4.0."
   ],
   "evals": [
     {
       "id": 1,
       "prompt": "Run the audit on the fixture with the defects in defects.json planted and explain each finding.",
-      "expected_output": "",
+      "expected_output": "An audit report that leads with the thirteen planted mechanical FAILs, each tied to its check, with the implied bump and companion edits, and no fixes applied.",
+      "assertions": [
+        "Runs the audit script (audit.py --root) rather than eyeballing the set, and reports its FAIL lines",
+        "Finds all thirteen mechanical defects D01 to D13 and attributes each to a check (registers, residue, direction, markers, versions, counts, allowlist, rogue, sections, derived, assets)",
+        "Reports at least these specifics: A-14 referenced but not defined, one-digit [R-3], [EA-05] cited by the architecture, README pointing to 0.3.0, bare token A12, a claim of twelve [A] entries against eleven, and an estimate pin of 0.2.0 not satisfied by architecture 0.3.1",
+        "Reports no FAIL beyond the planted defects",
+        "Orders the report FAILs first, then judgment findings, then WARNs, and does not declare the set converged",
+        "Names the bump each fix implies and what moves with it in the same commit, and does not apply fixes or commit"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Compare fixture/reissue/annex-1.0.0.md with annex-1.1.0.md. The Trust's clarification letter changed the annex; tell me what the reissue has to carry.",
+      "expected_output": "A reissue list produced by the script naming the changed and added annex items and the other changed passage.",
+      "assertions": [
+        "Runs audit.py with --reissue on the old and new texts instead of diffing by eye",
+        "Lists items 3 and 5 as changed and item 7 as added, with no item removed",
+        "Names one further changed passage outside the numbered items",
+        "Maps each change to the register rows or sections it touches and whether it is a new row, a closed entry or a superseded decision",
+        "Hands the client-facing wording to client-facing-derivations and does not edit the annex already sent"
+      ],
       "files": []
     }
   ]

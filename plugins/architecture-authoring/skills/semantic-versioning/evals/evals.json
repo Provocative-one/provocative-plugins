@@ -1,0 +1,61 @@
+{
+  "skill_name": "semantic-versioning",
+  "should_trigger": [
+    "What should the next version be after I removed this endpoint?",
+    "Is this change breaking?",
+    "Patch, minor or major?",
+    "Bump the version of my essay after I added a new section.",
+    "What is the first version for this new knowledge unit?",
+    "Does adding a chapter to the client blueprint count as a MINOR?",
+    "I fixed a wrong figure in the approved architecture section. Version it."
+  ],
+  "should_not_trigger": [
+    "Write the changelog entry for 2.0.0.",
+    "Create the git tag and push the release.",
+    "Which branching strategy should we use for hotfixes?",
+    "Name the PDF file for the new version of the proposal.",
+    "Add an -rc.1 pre-release suffix to this build.",
+    "Sort these version strings in order.",
+    "Close [A-07] in the register, the export works now.",
+    "Write release notes for the customers."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Our Python library mylib is at 2.3.4. The next release removes the deprecated function load_legacy() and adds an optional timeout parameter to fetch(). What is the next version?",
+      "expected_output": "3.0.0, classified MAJOR because the removal breaks callers, with the interface named in one sentence.",
+      "assertions": [
+        "States the next version is 3.0.0 and that the increment is MAJOR",
+        "Says MAJOR pre-empts MINOR when a change is both breaking and additive",
+        "Names the consumer (code calling mylib) and the interface (the public function signatures) in the rationale sentence",
+        "Does not average the two signals into a MINOR or split the release in two"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I have an essay, 'On Boundaries', that I want to start tracking under versions. It has never had a version. What is the first one?",
+      "expected_output": "0.1.0, with the consumer and interface named in a one-sentence rationale.",
+      "assertions": [
+        "Assigns 0.1.0",
+        "Does not assign 0.0.1 or 1.0.0, and gives the reason: a PATCH presupposes prior scope, and 1.0.0 is a later MAJOR threshold",
+        "Names the reader as consumer and the thesis with its distinctions as the interface, or asks for them if unclear",
+        "Does not propose file names, tags or a release process"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "The client blueprint is at 1.4.0. Two changes: (a) a wrong user count in an already approved section is corrected from 14 to 12, and no decision depends on it; (b) the file is renamed with a date suffix. Version it.",
+      "expected_output": "1.4.1, a PATCH for the correction, with the rename treated as out of scope.",
+      "assertions": [
+        "Assigns 1.4.1 and classifies the change as PATCH",
+        "States the consumer (the client engagement) and the interface (the scope and decisions signed off), and that the correction leaves both intact",
+        "Says the file rename is not a versioning decision and is left to the caller's naming convention",
+        "Records the classification with a one-sentence rationale, not a bare label",
+        "Adds no pre-release or build-metadata suffix"
+      ],
+      "files": []
+    }
+  ]
+}

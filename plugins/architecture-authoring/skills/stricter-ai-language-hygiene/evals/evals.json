@@ -1,0 +1,65 @@
+{
+  "skill_name": "stricter-ai-language-hygiene",
+  "should_trigger": [
+    "Do a hygiene pass on this README.",
+    "Make this paragraph sound human.",
+    "Run a marker sweep on the proposal.",
+    "De-AI this section.",
+    "Draft an email to the client confirming the workshop date.",
+    "Write a Slack message asking Tom for the export log.",
+    "Write the commit message for this change.",
+    "This reads like a chatbot wrote it. Fix it."
+  ],
+  "should_not_trigger": [
+    "Refactor this function to remove the duplicated branches.",
+    "Convert this CSV to JSON.",
+    "Explain how em-dashes are used in typographic style guides.",
+    "Draw a C4 container diagram of the platform.",
+    "Run the audit script and show me the raw output.",
+    "Write a SQL query that counts orders per customer.",
+    "Which version increment is this change?",
+    "Critique the argument in section 3 of my essay."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Do a hygiene pass on this and return the cleaned text.\n\n\"Our seamless platform leverages a holistic approach — and that matters — to empower teams. The migration is robust rather than fragile, priced rather than absorbed, and measured instead of asserted. Read this part first: this section describes the rollout. Latency rose to 40 ms since v1.2.0 and the metrics view is new. The plan has five phases: discovery, build, pilot and rollout.\"",
+      "expected_output": "A cleaned paragraph free of banned vocabulary, rhetorical dashes, reflexive contrasts, metalanguage and diff-talk, with the phase count corrected.",
+      "assertions": [
+        "None of the banned words (seamless, leverages, holistic, robust, empower) remains in the cleaned text",
+        "The mid-sentence rhetorical em-dash is gone, replaced by a comma, colon, period or parentheses",
+        "At most one 'rather than' or 'instead of' construction survives, and only where it carries the argument",
+        "The metalanguage ('Read this part first', 'this section describes') is deleted",
+        "The diff-talk ('rose to', 'since v1.2.0', 'is new') is rewritten so the body states the position as it stands",
+        "The count mismatch is fixed: five phases are claimed and four are named, and the text names the fifth or says four"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Draft a Slack message to Maya Lindqvist asking her to share the Trust's staff list by Friday so we can close the assumption that the editors number about forty.",
+      "expected_output": "A short direct Slack message that names Maya, the action and the deadline.",
+      "assertions": [
+        "Names Maya and puts the request in the first sentence",
+        "States the deliverable (the staff list), the deadline (Friday) and why it is needed (to close the editor-count assumption)",
+        "Uses short sentences and no essay-shaped bullet lists",
+        "Contains no em-dash, banned word, metalanguage or antithesis reflex",
+        "Bold, if used at all, marks the one item the reader must not miss"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Write a paragraph for an essay that introduces our own term 'boundary condition' (a constraint imposed from outside the system that the system cannot revise from within), uses it twice more, and uses the word Zeitgeist once.",
+      "expected_output": "A paragraph that bolds the construct at its definition, Capitalizes it afterward, and italicizes the foreign term.",
+      "assertions": [
+        "The first occurrence of the construct is in bold, immediately before its definition",
+        "The definition is plain prose with no special marking",
+        "Every later occurrence is Capitalized (Boundary Condition) and not bold",
+        "Zeitgeist is italicized at its occurrence",
+        "Ordinary words around the term, such as 'system' and 'constraint', get no special typography"
+      ],
+      "files": []
+    }
+  ]
+}

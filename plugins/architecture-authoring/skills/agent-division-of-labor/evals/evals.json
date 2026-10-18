@@ -11,13 +11,38 @@
     "Build a knowledge pack for the engagement closure.",
     "Assign Jira tickets to the team.",
     "Write a RACI for the project.",
-    "Export this chat so I can continue elsewhere."
+    "Export this chat so I can continue elsewhere.",
+    "Write the changelog entry for architecture 0.4.0.",
+    "Summarize today's session in a message to the team.",
+    "Write a resume file that carries the open items across engagements, with the knowledge pack."
   ],
   "evals": [
     {
       "id": 1,
       "prompt": "Write the 'Who writes what' section and a HANDOFF.md for the fixture repository, assuming one shell-capable agent and one rendering agent.",
-      "expected_output": "",
+      "expected_output": "A 'Who writes what' section with one writing agent per path, an observed-capabilities table, and an untracked HANDOFF.md in the house template.",
+      "assertions": [
+        "Gives a table in which every path has exactly one writing agent; no path lists two",
+        "Assigns arc42/, CHANGELOG.md, README.md and tools/ to the shell-capable agent and briefs/ and generated/ to the rendering agent",
+        "Splits published/ between the agent that builds and the agent that commits",
+        "Includes a capabilities table written as observed on this repository, with Can and Cannot columns for each agent",
+        "States that a change to a file the agent does not own arrives as a proposal block and that handoffs do not become files",
+        "HANDOFF.md carries uncommitted changes with a ready commit message, open decisions with owners, next work in order and state checks, and is stated to be git-ignored and overwritten at each handoff"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Claude Code has just bumped the fixture architecture to 0.4.0 after registering a seventh component. README.md still says 'Architecture 0.3.1 · Estimate 0.2.0'. You are the Cowork session. Get the README right.",
+      "expected_output": "A proposal block addressed to the README's owner, not an edit of the file.",
+      "assertions": [
+        "Does not edit README.md and does not claim to have changed it",
+        "Produces a proposal block naming the file, an anchor, a replacement, a reason and what the change obligates",
+        "The anchor is the exact current text (the versions line or 'Architecture 0.3.1') and the replacement carries 0.4.0",
+        "The obligations include the changelog entry and a review of the estimate's pin, since a MINOR below 1.0.0 breaks the pin",
+        "Names the owning agent (shell and git) as the one who applies the block, runs the audit and commits",
+        "Does not commit or push"
+      ],
       "files": []
     }
   ]

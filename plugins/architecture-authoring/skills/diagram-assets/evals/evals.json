@@ -2,30 +2,68 @@
   "skill_name": "diagram-assets",
   "should_trigger": [
     "Build [HHB-CNT-01] from its brief.",
-    "Register the deployment diagram in \u00a78.8.",
+    "Register the deployment diagram in §8.8.",
     "Is [XYZ-CTX-01] built?",
     "Write the brief for the container view before we draw it.",
     "Check this SVG against its brief.",
-    "Make a simplified container view for the executive slide."
+    "Make a simplified container view for the executive slide.",
+    "Register the deployment diagram in the architecture's asset register, section 8.8.",
+    "Check this SVG against its brief and tell me which elements have no source in the document.",
+    "we have the arc42 set for Project Orca; draw the container view for it, brief first please",
+    "Make a simplified container view for the executive slide, derived from the architecture set.",
+    "The client deck needs one diagram of the target architecture. Take it from the container view in our arc42 document.",
+    "Preciso do diagrama de contexto do arc42 do projeto, com o brief escrito antes de desenhar.",
+    "Add a 'Payment gateway' box to the context diagram of our arc42 architecture.",
+    "Our arc42 architecture is done. I want a Mermaid view of its container diagram to paste into the wiki.",
+    "Section 5 of our arc42 architecture lists three components: API, Ledger, Postgres. I want a Mermaid view of that container diagram for the wiki."
   ],
   "should_not_trigger": [
     "Make a Mermaid C4 package documenting our estate for the handoff.",
     "Chart the monthly cost data.",
     "Draw a logo for the project.",
-    "Critique the argument in architecture \u00a74."
+    "Critique the argument in architecture §4.",
+    "Document our payments platform as a C4 package for the handoff.",
+    "Our estate: a web shop, a ledger service and a Postgres database, plus a legacy batch settler we are retiring. No arc42 or any other document exists. Draw it in Mermaid, C4 style.",
+    "System context and container view in Mermaid for the whole estate, so I can import them into Lucid. There is no architecture document, only what I tell you.",
+    "Refresh our C4 set: the warehouse integration was cancelled and notifications went live.",
+    "Critique this C4 diagram package.",
+    "Desenhe a plataforma as-is e to-be em Mermaid, mostrando o que esta sendo aposentado e o que esta planejado.",
+    "need an as-is / to-be architecture baseline as diagrams for the closure handoff, nothing formal exists yet",
+    "update the C4 diagrams, ledger service is live now and the batch settler is going away",
+    "draw our architecture",
+    "Chart the monthly cloud costs.",
+    "Draw a flowchart of the login sequence.",
+    "Audit the arc42 set for coherence before we cut version 1.2.",
+    "Write a Mermaid sequence diagram of the checkout API call.",
+    "Draw an ER diagram for this SQL schema: users(id), orders(id, user_id)."
   ],
   "evals": [
     {
       "id": 1,
       "prompt": "In the fixture, build [HHB-CNT-01] from its brief, run the acceptance check, and record the build.",
-      "expected_output": "",
-      "files": []
+      "expected_output": "Generates the brief, builds the SVG from it, runs the acceptance check to zero failures, and records the build in the register row, brief and changelog without committing.",
+      "files": [],
+      "assertions": [
+        "The response runs or cites diagram_tools.py brief for [HHB-CNT-01] before any SVG is drawn",
+        "Every label on the built canvas appears in the brief, and no extra label is added",
+        "The response runs diagram_tools.py check and reports its result; it does not claim acceptance on a failing check",
+        "The register row flips to Built, and the response states that the holding document takes a MINOR bump",
+        "The response lists the SVG, brief, row, version, README pointer and changelog entry as one change set and does not commit without an instruction",
+        "The response states the declared arrow kind (dependencies or data flow) and does not mix both on one canvas"
+      ]
     },
     {
       "id": 2,
       "prompt": "Add a 'Payment gateway' box to the fixture's context diagram.",
       "expected_output": "Refuses to draw it until a source exists; proposes the register entry or section first.",
-      "files": []
+      "files": [],
+      "assertions": [
+        "The response declines to draw the Payment gateway box on the strength of the request alone",
+        "The response proposes first adding a source: a section, a [C-nn] component row or an [A-nn] entry",
+        "The response says the brief must cite that source before the SVG changes",
+        "The response does not edit the SVG in this turn",
+        "The response names the register or section where the new fact would go"
+      ]
     }
   ]
 }
