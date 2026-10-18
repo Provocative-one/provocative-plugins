@@ -1,0 +1,26 @@
+{
+  "skill_name": "arc42-architecture-document",
+  "should_trigger": [
+    "Start an architecture document for our new booking platform.",
+    "Document this system in arc42.",
+    "Add an architecture decision about the search index.",
+    "We got an RFP; draft the architecture response.",
+    "Bump the architecture to 0.4.0 after adding the payments component.",
+    "Use our arc42 set as the baseline for the discovery phase."
+  ],
+  "should_not_trigger": [
+    "Price this architecture.",
+    "Audit the document set.",
+    "Make a deck for the client.",
+    "Explain what arc42 section 7 is for.",
+    "Draw a C4 container diagram."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Scaffold a set for an invented intranet migration for 'Example Council' with prefix EXI, then fill \u00a71 to \u00a74 from this brief: the council wants one intranet for nine departments, Welsh and English, live in two waves.",
+      "expected_output": "",
+      "files": []
+    }
+  ]
+}

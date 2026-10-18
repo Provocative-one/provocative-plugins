@@ -1,0 +1,33 @@
+{
+  "skill_name": "evidence-and-registers",
+  "should_trigger": [
+    "Is this traceable or should it be an assumption?",
+    "Mark this paragraph: which statements are inferences?",
+    "Open a risk register for the architecture.",
+    "Add the editor count to the register, Maya told us yesterday.",
+    "Close [A-07], the export works now.",
+    "Who owns [A-03]?",
+    "Should 'the vendor will keep the API stable' be [I] or [A-nn]?"
+  ],
+  "should_not_trigger": [
+    "Is this news article true?",
+    "Where does the word 'arc42' come from?",
+    "Review this pull request.",
+    "Summarize this meeting.",
+    "Write a blog post about architecture documentation."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Here is a paragraph from architecture \u00a74 of the fixture with the markers stripped. Mark every statement and file what needs a register row.",
+      "expected_output": "",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Close [A-05] in the fixture. No evidence is attached.",
+      "expected_output": "",
+      "files": []
+    }
+  ]
+}

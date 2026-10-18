@@ -1,0 +1,25 @@
+{
+  "skill_name": "architecture-set-audit",
+  "should_trigger": [
+    "Audit the set before I cut 0.4.0.",
+    "Run the coherence check.",
+    "Do the counts in the proposal match the arc42?",
+    "Any bare references left?",
+    "The client's clarification letter is attached; what does the reissue have to carry?",
+    "Pre-freeze sweep, please."
+  ],
+  "should_not_trigger": [
+    "Critique the argument in \u00a74.",
+    "Write the assumptions annex.",
+    "Review my Terraform module.",
+    "Check this essay for AI-sounding phrases."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Run the audit on the fixture with the defects in defects.json planted and explain each finding.",
+      "expected_output": "",
+      "files": []
+    }
+  ]
+}

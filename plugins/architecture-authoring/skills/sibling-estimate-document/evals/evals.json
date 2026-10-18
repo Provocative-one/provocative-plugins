@@ -1,0 +1,25 @@
+{
+  "skill_name": "sibling-estimate-document",
+  "should_trigger": [
+    "Price this architecture.",
+    "Build the effort model against the PoC commit history.",
+    "What does M2 cost in person-weeks?",
+    "Turn the architecture into a milestone plan with effort.",
+    "The architecture moved to 1.2.0; does the estimate need re-deriving?",
+    "Staffing and allocation for the build."
+  ],
+  "should_not_trigger": [
+    "What day rate should we charge?",
+    "Write the architecture document.",
+    "Make the client-facing milestone plan.",
+    "Estimate how long this SQL query takes."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Given the fixture architecture at 0.3.1, write a second estimate that calibrates on a 15 person-day pilot, keeping the one-way rule.",
+      "expected_output": "",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" font-family="sans-serif" font-size="14">
+  <rect x="240" y="120" width="160" height="60" fill="#111" /><text x="320" y="155" fill="#fff" text-anchor="middle">Heritage Hub</text>
+  <rect x="20" y="20" width="140" height="40" fill="none" stroke="#111" /><text x="90" y="45" text-anchor="middle">Editors</text>
+  <rect x="20" y="240" width="140" height="40" fill="none" stroke="#111" /><text x="90" y="265" text-anchor="middle">Visitors</text>
+  <rect x="480" y="20" width="140" height="40" fill="none" stroke="#111" /><text x="550" y="45" text-anchor="middle">CMS vendor</text>
+  <rect x="480" y="240" width="140" height="40" fill="none" stroke="#111" /><text x="550" y="265" text-anchor="middle">Collections database</text>
+  <path d="M160 40 L240 140 M160 260 L240 160 M400 140 L480 40 M400 160 L480 260" stroke="#111" fill="none" />
+</svg>

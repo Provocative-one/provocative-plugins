@@ -1,0 +1,25 @@
+{
+  "skill_name": "client-facing-derivations",
+  "should_trigger": [
+    "Make a three-slide deck from the estimate.",
+    "Generate the assumptions and exclusions annex.",
+    "Build Appendix 5, the traceability annex.",
+    "Answer the client's clarification questions from the registers.",
+    "A plain version of the milestones for the client.",
+    "What did we actually say in the proposal about integration?"
+  ],
+  "should_not_trigger": [
+    "Add an assumption to the register.",
+    "Audit the set.",
+    "Write the architecture's \u00a75.",
+    "Translate this paragraph into Portuguese."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "From the fixture, produce the assumptions and exclusions annex for the Trust, its brief, and the derived-mode audit result.",
+      "expected_output": "",
+      "files": []
+    }
+  ]
+}

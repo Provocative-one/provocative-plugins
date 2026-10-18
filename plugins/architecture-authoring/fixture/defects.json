@@ -1,0 +1,258 @@
+{
+  "description": "Defects planted into a copy of heritage-hub. The audit must report every mechanical defect below and no other FAIL. Judgment defects are for the review checklist and the hygiene sweep, not for the script.",
+  "mechanical": [
+    {
+      "id": "D01",
+      "catalog": "dangling reference",
+      "file": "arc42/hhb-architecture-arc42.md",
+      "find": "as `[AD-05]` settled.",
+      "replace": "as `[AD-05]` settled, pending `[A-14]`.",
+      "expect": [
+        {
+          "check": "registers",
+          "contains": "A-14 referenced but not defined"
+        }
+      ]
+    },
+    {
+      "id": "D02",
+      "catalog": "one-digit reference",
+      "file": "arc42/hhb-architecture-arc42.md",
+      "find": "| `[R-03]` | Template divergence",
+      "replace": "| `[R-03]` | Template divergence (see `[R-3]`)",
+      "expect": [
+        {
+          "check": "residue",
+          "contains": "one-digit reference [R-3]"
+        }
+      ]
+    },
+    {
+      "id": "D03",
+      "catalog": "architecture cites an estimate series",
+      "file": "arc42/hhb-architecture-arc42.md",
+      "find": "Search runs on an index fed from the collections export,",
+      "replace": "Search runs on an index fed from the collections export `[EA-05]`,",
+      "expect": [
+        {
+          "check": "direction",
+          "contains": "EA-05"
+        },
+        {
+          "check": "markers",
+          "contains": "[architecture] uses [EA-nn]"
+        }
+      ]
+    },
+    {
+      "id": "D04",
+      "catalog": "README pointer behind its target",
+      "file": "README.md",
+      "find": "Architecture 0.3.1",
+      "replace": "Architecture 0.3.0",
+      "expect": [
+        {
+          "check": "versions",
+          "contains": "points to architecture 0.3.0"
+        }
+      ]
+    },
+    {
+      "id": "D05",
+      "catalog": "Part E #1, bare token beside a bracketed one",
+      "file": "arc42/hhb-architecture-arc42.md",
+      "find": "| Pilot measurement only |",
+      "replace": "| Pilot measurement only, see A12 |",
+      "expect": [
+        {
+          "check": "residue",
+          "contains": "unbracketed series token A12"
+        }
+      ]
+    },
+    {
+      "id": "D06",
+      "catalog": "Part E #2, stated count against register",
+      "file": "arc42/hhb-architecture-arc42.md",
+      "find": "\u00a711.5, eleven entries",
+      "replace": "\u00a711.5, twelve entries",
+      "expect": [
+        {
+          "check": "counts",
+          "contains": "claims twelve [A] entries; register has 11"
+        }
+      ]
+    },
+    {
+      "id": "D07",
+      "catalog": "Part E #6, inverted date range",
+      "file": "arc42/hhb-architecture-arc42.md",
+      "find": "Lena Okafor leads the architecture for Example Consulting.",
+      "replace": "Lena Okafor leads the architecture for Example Consulting (with the Trust 2026 to 2024).",
+      "expect": [
+        {
+          "check": "residue",
+          "contains": "inverted date range 2026 to 2024"
+        }
+      ]
+    },
+    {
+      "id": "D08",
+      "catalog": "pin broken by a MINOR below 1.0.0",
+      "file": "arc42/hhb-estimate-arc42.md",
+      "find": "| Estimates against | Architecture document 0.3.0.",
+      "replace": "| Estimates against | Architecture document 0.2.0.",
+      "expect": [
+        {
+          "check": "versions",
+          "contains": "pin 0.2.0 is not satisfied by architecture 0.3.1"
+        }
+      ]
+    },
+    {
+      "id": "D09",
+      "catalog": "allowlist incomplete",
+      "file": "arc42/hhb-product-narrative.md",
+      "create": "# Product narrative\n\nA living document the audit configuration omits.\n",
+      "expect": [
+        {
+          "check": "allowlist",
+          "contains": "hhb-product-narrative.md"
+        }
+      ]
+    },
+    {
+      "id": "D10",
+      "catalog": "Part E #13, client vocabulary applied unevenly",
+      "file": "arc42/hhb-architecture-arc42.md",
+      "find": "The pilot site at pilot.example.com runs on the same platform today.",
+      "replace": "The pilot site at pilot.example.com runs on the same platform today, with a collection portal.",
+      "expect": [
+        {
+          "check": "rogue",
+          "contains": "'collection portal'"
+        }
+      ]
+    },
+    {
+      "id": "D11",
+      "catalog": "Part E #12, unqualified section reference",
+      "file": "arc42/hhb-estimate-arc42.md",
+      "find": "Every figure is a multiple of the SBE in `[EA-01]`,",
+      "replace": "Every figure is a multiple of the SBE in `[EA-01]` and \u00a713.4,",
+      "expect": [
+        {
+          "check": "sections",
+          "contains": "estimate \u00a713.4 resolves to no heading"
+        }
+      ]
+    },
+    {
+      "id": "D12",
+      "catalog": "Part E #8, internal identifiers on a client-facing artifact",
+      "file": "published/heritage-hub-milestone-plan-1.0.0.md",
+      "derived": true,
+      "find": "1. First wave live.",
+      "replace": "1. First wave live `[M-01]`.",
+      "expect": [
+        {
+          "check": "derived",
+          "contains": "internal register reference"
+        }
+      ]
+    },
+    {
+      "id": "D13",
+      "catalog": "asset marked Built with no SVG",
+      "file": "arc42/hhb-architecture-arc42.md",
+      "find": "| Container view | Not built |",
+      "replace": "| Container view | Built |",
+      "expect": [
+        {
+          "check": "assets",
+          "contains": "HHB-CNT-01 registered Built but arc42/assets/hhb-cnt-01.svg is missing"
+        }
+      ]
+    }
+  ],
+  "judgment": [
+    {
+      "id": "J01",
+      "defect": "An [I] that acquires an owner",
+      "plant": "In architecture \u00a74, append to the template-divergence inference: 'Tom Achebe owns this and will confirm it.'",
+      "caught_by": "architecture-set-audit judgment checklist, item 1"
+    },
+    {
+      "id": "J02",
+      "defect": "An [A-nn] restated as fact",
+      "plant": "In architecture \u00a77, write 'The renderer runs in the Trust subscription.' with no reference to [A-07].",
+      "caught_by": "judgment checklist, item 2"
+    },
+    {
+      "id": "J03",
+      "defect": "A thin section acquires an inferred target",
+      "plant": "In architecture \u00a710, add 'Pages render in under 800 ms.'",
+      "caught_by": "judgment checklist, item 3"
+    },
+    {
+      "id": "J04",
+      "defect": "Banned vocabulary",
+      "plant": "In architecture \u00a71.1, write 'a seamless authoring experience'.",
+      "caught_by": "stricter-ai-language-hygiene mechanical sweep"
+    },
+    {
+      "id": "J05",
+      "defect": "Part E #9, contingency stated two ways",
+      "plant": "Say in estimate \u00a711.2 that one milestone is buffered and in \u00a76 that two are.",
+      "caught_by": "judgment checklist, item 6"
+    }
+  ],
+  "reissue": {
+    "old": "reissue/annex-1.0.0.md",
+    "new": "reissue/annex-1.1.0.md",
+    "changed": [
+      3,
+      5
+    ],
+    "added": [
+      7
+    ],
+    "removed": [],
+    "passages": 1
+  },
+  "diagram": {
+    "id": "HHB-CTX-01",
+    "plants": [
+      {
+        "id": "G01",
+        "defect": "an element on the canvas that no brief element supports",
+        "find": "</svg>",
+        "replace": "  <text x=\"320\" y=\"220\" text-anchor=\"middle\">Payment gateway</text>\n</svg>",
+        "expect": {
+          "check": "elements",
+          "contains": "'Payment gateway' is in no brief element"
+        }
+      },
+      {
+        "id": "G02",
+        "defect": "an external font",
+        "find": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 300\" font-family=\"sans-serif\" font-size=\"14\">",
+        "replace": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 300\" font-family=\"sans-serif\" font-size=\"14\">\n  <style>@import url(https://fonts.example.com/brand.css);</style>",
+        "expect": {
+          "check": "svg",
+          "contains": "references something external"
+        }
+      },
+      {
+        "id": "G03",
+        "defect": "a color outside the house palette",
+        "find": "<rect x=\"240\" y=\"120\" width=\"160\" height=\"60\" fill=\"#111\" />",
+        "replace": "<rect x=\"240\" y=\"120\" width=\"160\" height=\"60\" fill=\"#e4002b\" />",
+        "expect": {
+          "check": "palette",
+          "contains": "#e4002b"
+        }
+      }
+    ]
+  }
+}

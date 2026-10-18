@@ -1,0 +1,24 @@
+{
+  "skill_name": "agent-division-of-labor",
+  "should_trigger": [
+    "Set up who edits what between Claude Code and Cowork on this repository.",
+    "Write the HANDOFF.md so the next session can continue.",
+    "I want to change the README but Cowork owns it; propose the change.",
+    "Give me paste-ready project instructions for the Cowork project.",
+    "Which agent should commit published files?"
+  ],
+  "should_not_trigger": [
+    "Build a knowledge pack for the engagement closure.",
+    "Assign Jira tickets to the team.",
+    "Write a RACI for the project.",
+    "Export this chat so I can continue elsewhere."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write the 'Who writes what' section and a HANDOFF.md for the fixture repository, assuming one shell-capable agent and one rendering agent.",
+      "expected_output": "",
+      "files": []
+    }
+  ]
+}

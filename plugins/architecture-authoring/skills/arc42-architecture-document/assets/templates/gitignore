@@ -1,0 +1,6 @@
+# Workbench output, regenerable from the living documents.
+generated/*
+!generated/.gitkeep
+
+# Session continuity notes stay out of history.
+HANDOFF.md

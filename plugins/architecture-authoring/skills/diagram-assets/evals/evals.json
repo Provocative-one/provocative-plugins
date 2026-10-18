@@ -1,0 +1,31 @@
+{
+  "skill_name": "diagram-assets",
+  "should_trigger": [
+    "Build [HHB-CNT-01] from its brief.",
+    "Register the deployment diagram in \u00a78.8.",
+    "Is [XYZ-CTX-01] built?",
+    "Write the brief for the container view before we draw it.",
+    "Check this SVG against its brief.",
+    "Make a simplified container view for the executive slide."
+  ],
+  "should_not_trigger": [
+    "Make a Mermaid C4 package documenting our estate for the handoff.",
+    "Chart the monthly cost data.",
+    "Draw a logo for the project.",
+    "Critique the argument in architecture \u00a74."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "In the fixture, build [HHB-CNT-01] from its brief, run the acceptance check, and record the build.",
+      "expected_output": "",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Add a 'Payment gateway' box to the fixture's context diagram.",
+      "expected_output": "Refuses to draw it until a source exists; proposes the register entry or section first.",
+      "files": []
+    }
+  ]
+}
