@@ -11,9 +11,9 @@ Regenerated from each plugin's manifest and each skill's frontmatter by `tools/i
 
 | Plugin | Version | Description |
 |---|---|---|
-| `architecture-authoring` | 0.2.0 | Author arc42 architecture document sets under an evidence discipline: sourced statements or marked ones, registers with owners and closure conditions, a one-way estimate priced against a calibrated unit, diagram assets briefed and accepted as traceable claims, a coherence audit that gates every version, client-facing derivations generated and never retyped, and a contract for agents sharing the repository. Embeds blunt critique, semantic-versioning classification, and AI-marker language hygiene. |
-| `architecture-continuity` | 0.1.0 | Architecture documentation and knowledge continuity for architects and tech leads: C4 diagram packages under a state-encoding grammar, and closure extraction and handoff packages that let work survive the people who hold it, with blunt critique, semantic-versioning classification, and AI-marker language hygiene built into both. |
-| `tech-lead-toolkit` | 0.1.0 | Drafting and review skills for tech leads and architects who keep the written record of an engineering effort: Jira and GitLab review comments, decision records, session reports, ticket critiques, and stories with Gherkin acceptance criteria, with blunt critique, semantic-versioning classification, and AI-marker language hygiene built into each. |
+| `architecture-authoring` | 0.2.1 | Author arc42 architecture document sets under an evidence discipline: sourced statements or marked ones, registers with owners and closure conditions, a one-way estimate priced against a calibrated unit, diagram assets briefed and accepted as traceable claims, a coherence audit that gates every version, client-facing derivations generated and never retyped, and a contract for agents sharing the repository. Embeds blunt critique, semantic-versioning classification, and AI-marker language hygiene. |
+| `architecture-continuity` | 0.1.1 | Architecture documentation and knowledge continuity for architects and tech leads: C4 diagram packages under a state-encoding grammar, and closure extraction and handoff packages that let work survive the people who hold it, with blunt critique, semantic-versioning classification, and AI-marker language hygiene built into both. |
+| `tech-lead-toolkit` | 0.1.1 | Drafting and review skills for tech leads and architects who keep the written record of an engineering effort: Jira and GitLab review comments, decision records, session reports, ticket critiques, and stories with Gherkin acceptance criteria, with blunt critique, semantic-versioning classification, and AI-marker language hygiene built into each. |
 
 ### Skills
 
@@ -22,24 +22,24 @@ Regenerated from each plugin's manifest and each skill's frontmatter by `tools/i
 | `architecture-authoring` | `agent-division-of-labor` | 0.2.0 | plugin skill |  |
 | `architecture-authoring` | `arc42-architecture-document` | 0.2.0 | plugin skill |  |
 | `architecture-authoring` | `architecture-set-audit` | 0.2.0 | plugin skill |  |
-| `architecture-authoring` | `blunt-critique` | none declared | shared copy |  |
+| `architecture-authoring` | `blunt-critique` | 0.2.0 | shared copy |  |
 | `architecture-authoring` | `client-facing-derivations` | 0.2.0 | plugin skill |  |
 | `architecture-authoring` | `diagram-assets` | 0.1.0 | plugin skill |  |
 | `architecture-authoring` | `evidence-and-registers` | 0.2.0 | plugin skill |  |
-| `architecture-authoring` | `semantic-versioning` | none declared | shared copy |  |
+| `architecture-authoring` | `semantic-versioning` | 0.2.0 | shared copy |  |
 | `architecture-authoring` | `sibling-estimate-document` | 0.2.0 | plugin skill |  |
-| `architecture-authoring` | `stricter-ai-language-hygiene` | 1.1.0 | shared copy |  |
-| `architecture-continuity` | `blunt-critique` | none declared | shared copy |  |
+| `architecture-authoring` | `stricter-ai-language-hygiene` | 1.1.1 | shared copy |  |
+| `architecture-continuity` | `blunt-critique` | 0.2.0 | shared copy |  |
 | `architecture-continuity` | `c4-diagram-package` | 0.1.0 | plugin skill | yes |
 | `architecture-continuity` | `closure-extraction-handoff` | 0.1.0 | plugin skill | yes |
-| `architecture-continuity` | `semantic-versioning` | none declared | shared copy |  |
-| `architecture-continuity` | `stricter-ai-language-hygiene` | 1.1.0 | shared copy |  |
+| `architecture-continuity` | `semantic-versioning` | 0.2.0 | shared copy |  |
+| `architecture-continuity` | `stricter-ai-language-hygiene` | 1.1.1 | shared copy |  |
 | `tech-lead-toolkit` | `atlassian-review-comment` | 0.1.0 | plugin skill | yes |
-| `tech-lead-toolkit` | `blunt-critique` | none declared | shared copy |  |
-| `tech-lead-toolkit` | `semantic-versioning` | none declared | shared copy |  |
+| `tech-lead-toolkit` | `blunt-critique` | 0.2.0 | shared copy |  |
+| `tech-lead-toolkit` | `semantic-versioning` | 0.2.0 | shared copy |  |
 | `tech-lead-toolkit` | `session-executive-report` | 0.1.0 | plugin skill | yes |
 | `tech-lead-toolkit` | `story-and-gherkin-drafting` | 0.1.0 | plugin skill | yes |
-| `tech-lead-toolkit` | `stricter-ai-language-hygiene` | 1.1.0 | shared copy |  |
+| `tech-lead-toolkit` | `stricter-ai-language-hygiene` | 1.1.1 | shared copy |  |
 | `tech-lead-toolkit` | `ticket-decision-record` | 0.1.0 | plugin skill | yes |
 | `tech-lead-toolkit` | `ticket-readiness-critique` | 0.1.0 | plugin skill | yes |
 
@@ -47,9 +47,9 @@ Regenerated from each plugin's manifest and each skill's frontmatter by `tools/i
 
 | Skill | Version | Copies | Also standalone |
 |---|---|---|---|
-| `blunt-critique` | none declared | 3 | yes |
-| `semantic-versioning` | none declared | 3 | yes |
-| `stricter-ai-language-hygiene` | 1.1.0 | 3 | yes |
+| `blunt-critique` | 0.2.0 | 3 | yes |
+| `semantic-versioning` | 0.2.0 | 3 | yes |
+| `stricter-ai-language-hygiene` | 1.1.1 | 3 | yes |
 <!-- index:end -->
 
 ## Layout

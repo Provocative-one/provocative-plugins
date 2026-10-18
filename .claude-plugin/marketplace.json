@@ -1,7 +1,8 @@
 {
   "name": "provocative-plugins",
   "owner": {
-    "name": "Ronaldo Arrudas"
+    "name": "Ronaldo Arrudas",
+    "email": "ronaldo@provocative.one"
   },
   "plugins": [
     {
