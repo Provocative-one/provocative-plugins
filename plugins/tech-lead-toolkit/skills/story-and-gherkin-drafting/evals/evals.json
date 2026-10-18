@@ -1,0 +1,41 @@
+{
+  "skill_name": "story-and-gherkin-drafting",
+  "should_trigger": [
+    "Turn this ADR into stories with Gherkin acceptance criteria.",
+    "Write the ACs as Given/When/Then.",
+    "Split this epic into a ranked backlog.",
+    "Definition of done as observable behavior for this guardrail story.",
+    "Draft a story from this review finding."
+  ],
+  "should_not_trigger": [
+    "Critique this ticket's readiness.",
+    "Write pytest unit tests for this function.",
+    "Explain behavior-driven development.",
+    "Review this merge request.",
+    "Summarize this meeting."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Story: the policy guardrail must reject IAM trust policies that lack session-tag enforcement. It ships as a new release of our policy set, which pipelines pin. Draft it with Gherkin ACs.",
+      "expected_output": "One story with scope tiers, single-criterion ACs and both Gherkin poles.",
+      "assertions": [
+        "Writes positive and negative scenarios; the negative ones show the guardrail refusing",
+        "Each AC states one observable condition",
+        "Scope items carry Must-have, Nice-to-have or Out of scope",
+        "Adds a version AC and a version scenario pair, since the policy set is pinned",
+        "Gherkin uses operational language only"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Draft four stories from these findings and rank them. The platform owner wants logging first; the head of operations wants disaster recovery first; the audit deadline is 30 Nov 2026.",
+      "expected_output": "A priority stack with the disagreement surfaced.",
+      "assertions": [
+        "Leads with a priority-stack table",
+        "Names both positions and the governing constraint, the audit deadline",
+        "Does not collapse the disagreement into one ranking without saying so"
+      ]
+    }
+  ]
+}

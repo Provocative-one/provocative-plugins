@@ -1,0 +1,43 @@
+{
+  "skill_name": "ticket-decision-record",
+  "should_trigger": [
+    "Make yesterday's Teams decision with the platform owner visible on PROJ-200.",
+    "Write the direction comment for adding a separate smoke-test block to the shared template.",
+    "Put this meeting determination on the record in Jira.",
+    "The stakeholder said no wildcard roles in the hallway; capture it on the discovery ticket.",
+    "Awareness on the parent, direction on the implementation story, please."
+  ],
+  "should_not_trigger": [
+    "Write minutes for today's call from this VTT.",
+    "Review this merge request.",
+    "Draft a story for the logging pipeline.",
+    "Send a Teams message to the platform owner asking for approval.",
+    "Is this ticket ready for the sprint?"
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Teams thread, 14 Oct 2026. Ana Ruiz (Platform Owner), 10:02: 'No wildcard trust policies, full stop. Session tags are mandatory.' Ben Cole (Engineer), 10:05: 'Then option A is out at scale.' Ana Ruiz, 10:06: 'Correct.' Parent ticket PROJ-200 (discovery), implementation story PROJ-210. Put this on the record.",
+      "expected_output": "An awareness comment on PROJ-200 and a direction comment on PROJ-210.",
+      "assertions": [
+        "Produces both comments, awareness on the parent and direction on the child",
+        "Quotes Ana Ruiz verbatim, attributed with role, date and time on its own line",
+        "States the determination plainly: wildcard trust policies are excluded, session tags mandatory",
+        "Names what the determination forecloses: option A at scale",
+        "No @-mentions; names in Given Surname form",
+        "Does not post"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "We need to decide between modifying the existing smoke-test block in the shared pipeline template and adding a discrete new block. Engineers lean towards the new block. Write the direction comment for PROJ-310.",
+      "expected_output": "A six-section direction comment with option analysis.",
+      "assertions": [
+        "Each rejected option loses on a stated ground",
+        "Names a reversal condition for the recommendation",
+        "States the version consequence for the shared template, or says nothing about versions if none applies",
+        "Contains no story-point reconciliation"
+      ]
+    }
+  ]
+}

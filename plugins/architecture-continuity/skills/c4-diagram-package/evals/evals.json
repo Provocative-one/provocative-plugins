@@ -1,0 +1,42 @@
+{
+  "skill_name": "c4-diagram-package",
+  "should_trigger": [
+    "Document our payments platform as a C4 package for the handoff.",
+    "System context and container view in Mermaid so I can import them into Lucid.",
+    "Refresh our C4 set: the warehouse integration was cancelled and notifications went live.",
+    "Critique this C4 diagram package.",
+    "Draw the platform as-is and to-be with what is retiring and what is planned."
+  ],
+  "should_not_trigger": [
+    "Build [HHB-CNT-01] from its brief.",
+    "Register the deployment diagram in the architecture's asset register.",
+    "Draw a flowchart of the login sequence.",
+    "Chart monthly cloud costs.",
+    "Make a knowledge pack from these pages."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Platform: a ledger service is live; a fraud-scoring service is being built; a batch settler is being retired; the EU region is out of scope because of a data-residency decision of 1 Sep 2026. Produce the C4 package with L1 and L2.",
+      "expected_output": "Two .mmd sources, two companions and a README, auditing clean.",
+      "assertions": [
+        "Every .mmd declares all six state classes and classes every node",
+        "Non-present states carry their glyph and word",
+        "Titles are ASCII",
+        "The EU exclusion is named with its driver in the header and the Scope note",
+        "Companions follow Executive Summary, Diagram, Walkthrough, References",
+        "audit_c4_package.py reports 0 FAIL"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Refresh the package: the warehouse integration, previously planned, was cancelled on 5 Oct 2026.",
+      "expected_output": "A refreshed package.",
+      "assertions": [
+        "Draws the warehouse integration as superseded or parked, never deletes it",
+        "Adds a currency note naming the governing record",
+        "Classifies the refresh as MAJOR: a planned element moved toward withdrawal"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "skill_name": "session-executive-report",
+  "should_trigger": [
+    "Write up this call; the VTT is attached.",
+    "Minutes from this Teams transcript for people who missed it.",
+    "Executive notes from today's alignment session.",
+    "Turn these raw meeting notes into a report with action items.",
+    "Reissue last week's session report: the owner of action 3 was wrong."
+  ],
+  "should_not_trigger": [
+    "Summarize this article.",
+    "Transcribe this audio file.",
+    "Put the decision from this meeting on the Jira ticket.",
+    "Draft an email to the attendees.",
+    "Make a slide deck from this transcript."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "VTT excerpt, session of 15 Oct 2026, 14:00 UTC. [00:01:10] Ana Ruiz: We agree the collector runs as a worker plus queue. [00:03:40] Ben Cole: I'll draft the ADR by next Tuesday. [00:05:02] Ana Ruiz: The open question is retention; nobody can answer that today. Write the executive report.",
+      "expected_output": "A Markdown executive report saved as a file.",
+      "assertions": [
+        "Executive Summary is prose, with no bullets",
+        "Records the decision, the forward state and the open retention question",
+        "Converts 'next Tuesday' to an absolute date",
+        "Quotes verbatim with [HH:MM:SS] attribution on its own line",
+        "Action Items table has one row, Ben Cole drafting the ADR, and no placeholder rows",
+        "Header carries the date and time in UTC",
+        "Saved as a .md file and presented, not posted"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Reissue the report of 8 Oct 2026: the owner of action item 3 is Carla Diaz, not Ben Cole, and people have already acted on it.",
+      "expected_output": "A revised report with a revision note.",
+      "assertions": [
+        "Classifies the change as MAJOR: a recorded owner that people acted on was reversed",
+        "Adds a Version line and a revision note with a one-sentence rationale",
+        "Changes nothing else in the recorded decisions"
+      ]
+    }
+  ]
+}
