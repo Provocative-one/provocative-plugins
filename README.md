@@ -19,29 +19,29 @@ Regenerated from each plugin's manifest and each skill's frontmatter by `tools/i
 
 | Plugin | Skill | Version | Kind | Also standalone |
 |---|---|---|---|---|
-| `architecture-authoring` | `agent-division-of-labor` | 0.2.0 | plugin skill |  |
-| `architecture-authoring` | `arc42-architecture-document` | 0.2.0 | plugin skill |  |
-| `architecture-authoring` | `architecture-set-audit` | 0.2.0 | plugin skill |  |
+| `architecture-authoring` | `agent-division-of-labor` | 0.2.1 | plugin skill |  |
+| `architecture-authoring` | `arc42-architecture-document` | 0.2.1 | plugin skill |  |
+| `architecture-authoring` | `architecture-set-audit` | 0.2.1 | plugin skill |  |
 | `architecture-authoring` | `blunt-critique` | 0.2.0 | shared copy |  |
-| `architecture-authoring` | `client-facing-derivations` | 0.2.0 | plugin skill |  |
-| `architecture-authoring` | `diagram-assets` | 0.1.0 | plugin skill |  |
-| `architecture-authoring` | `evidence-and-registers` | 0.2.0 | plugin skill |  |
+| `architecture-authoring` | `client-facing-derivations` | 0.2.1 | plugin skill |  |
+| `architecture-authoring` | `diagram-assets` | 0.1.1 | plugin skill |  |
+| `architecture-authoring` | `evidence-and-registers` | 0.2.1 | plugin skill |  |
 | `architecture-authoring` | `semantic-versioning` | 0.2.0 | shared copy |  |
-| `architecture-authoring` | `sibling-estimate-document` | 0.2.0 | plugin skill |  |
+| `architecture-authoring` | `sibling-estimate-document` | 0.2.1 | plugin skill |  |
 | `architecture-authoring` | `stricter-ai-language-hygiene` | 1.1.1 | shared copy |  |
 | `architecture-continuity` | `blunt-critique` | 0.2.0 | shared copy |  |
-| `architecture-continuity` | `c4-diagram-package` | 0.1.0 | plugin skill | yes |
-| `architecture-continuity` | `closure-extraction-handoff` | 0.1.0 | plugin skill | yes |
+| `architecture-continuity` | `c4-diagram-package` | 0.1.1 | plugin skill | yes |
+| `architecture-continuity` | `closure-extraction-handoff` | 0.1.1 | plugin skill | yes |
 | `architecture-continuity` | `semantic-versioning` | 0.2.0 | shared copy |  |
 | `architecture-continuity` | `stricter-ai-language-hygiene` | 1.1.1 | shared copy |  |
-| `tech-lead-toolkit` | `atlassian-review-comment` | 0.1.0 | plugin skill | yes |
+| `tech-lead-toolkit` | `atlassian-review-comment` | 0.1.1 | plugin skill | yes |
 | `tech-lead-toolkit` | `blunt-critique` | 0.2.0 | shared copy |  |
 | `tech-lead-toolkit` | `semantic-versioning` | 0.2.0 | shared copy |  |
-| `tech-lead-toolkit` | `session-executive-report` | 0.1.0 | plugin skill | yes |
-| `tech-lead-toolkit` | `story-and-gherkin-drafting` | 0.1.0 | plugin skill | yes |
+| `tech-lead-toolkit` | `session-executive-report` | 0.1.1 | plugin skill | yes |
+| `tech-lead-toolkit` | `story-and-gherkin-drafting` | 0.1.1 | plugin skill | yes |
 | `tech-lead-toolkit` | `stricter-ai-language-hygiene` | 1.1.1 | shared copy |  |
-| `tech-lead-toolkit` | `ticket-decision-record` | 0.1.0 | plugin skill | yes |
-| `tech-lead-toolkit` | `ticket-readiness-critique` | 0.1.0 | plugin skill | yes |
+| `tech-lead-toolkit` | `ticket-decision-record` | 0.1.1 | plugin skill | yes |
+| `tech-lead-toolkit` | `ticket-readiness-critique` | 0.1.1 | plugin skill | yes |
 
 ### Shared skills
 
