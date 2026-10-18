@@ -1,6 +1,8 @@
 ---
 name: blunt-critique
 description: Deliver maximally blunt, evidence-grounded critique with zero sycophancy whenever the user asks to critique, review, assess, evaluate, check, or give feedback on any content — documents, essays, arguments, frameworks, code documentation, decks, designs, or revisions of previously critiqued work. Use this skill even when the user just says "check it", "how about now?", "again", or uploads a new version of something critiqued before. The user explicitly values unsoftened critique as the only kind that enables meaningful growth; flattery and cushioning are failure modes here, never courtesy.
+metadata:
+  version: 0.2.0
 ---
 
 # Blunt Critique

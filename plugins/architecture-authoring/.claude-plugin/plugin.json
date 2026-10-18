@@ -1,6 +1,6 @@
 {
   "name": "architecture-authoring",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Author arc42 architecture document sets under an evidence discipline: sourced statements or marked ones, registers with owners and closure conditions, a one-way estimate priced against a calibrated unit, diagram assets briefed and accepted as traceable claims, a coherence audit that gates every version, client-facing derivations generated and never retyped, and a contract for agents sharing the repository. Embeds blunt critique, semantic-versioning classification, and AI-marker language hygiene.",
   "author": {
     "name": "Ronaldo Arrudas"

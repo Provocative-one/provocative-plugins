@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.1] - 2026-10-18
+
+### Changed
+- `stricter-ai-language-hygiene` moves to 1.1.1: the origin note and the client-, city- and framework-specific examples are replaced with neutral ones. No rule, trigger or output format changes.
+- `blunt-critique` and `semantic-versioning` now declare `metadata.version` 0.2.0 in their frontmatter. Their text is unchanged.
+
 ## [0.2.0] - 2026-10-04
 
 ### Added

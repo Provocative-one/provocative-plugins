@@ -1,6 +1,8 @@
 ---
 name: semantic-versioning
 description: "Classify a change to any versioned subject — software, an Enterprise Architecture deliverable, an essay, a knowledge-repository unit, a governance document, or anything else someone has decided to track through discrete states — as a PATCH, MINOR, or MAJOR increment, or assign the correct first version. Use this skill any time the user asks how to version something, what the next version number should be, whether a change is breaking, or wants a version bumped — even when the subject is not software. This is a pure classifier — it does not itself define file-naming conventions, branching strategy, or release process — and other skills may depend on or embed it whenever they need a versioning decision."
+metadata:
+  version: 0.2.0
 ---
 
 # Semantic Versioning (generalized classifier)

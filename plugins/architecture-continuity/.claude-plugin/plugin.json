@@ -1,6 +1,6 @@
 {
   "name": "architecture-continuity",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Architecture documentation and knowledge continuity for architects and tech leads: C4 diagram packages under a state-encoding grammar, and closure extraction and handoff packages that let work survive the people who hold it, with blunt critique, semantic-versioning classification, and AI-marker language hygiene built into both.",
   "author": {
     "name": "Ronaldo Arrudas"

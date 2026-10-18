@@ -2,12 +2,12 @@
 name: stricter-ai-language-hygiene
 description: Enforce strict AI-marker hygiene on every piece of prose Claude produces or edits, including typographic treatment of foreign terms (italics) and of concepts/constructs introduced by the text (bold at definition, Capitalized thereafter). Apply this skill whenever generating or revising ANY artifact (documents, reports, proposals, architecture docs, narratives, README files, commit messages, changelogs) and whenever drafting ANY email, Teams, Slack, or chat message, even short ones, even when the user does not mention hygiene. The rules are standing practice, not a requested step. Also apply when the user asks for a "hygiene pass", "marker sweep", "de-AI", "make it sound human", mentions text reading as AI-generated, or asks for review of tone, style, or coherence in written material.
 metadata:
-  version: 1.1.0
+  version: 1.1.1
 ---
 
 # Stricter AI-marked Language Hygiene
 
-Prose that reads as machine-written costs the author credibility before the content is judged. The rules below were developed on live bid documents after a senior reader dismissed drafts as "too AI-looking, almost not worth my time." They apply to every artifact and every drafted message, on every pass, before the pass is considered complete. They are not a step the user requests.
+Prose that reads as machine-written costs the author credibility before the content is judged. The rules below apply to every artifact and every drafted message, on every pass, before the pass is considered complete. They are not a step the user requests.
 
 Language-marker rule families, then the typographic choreography for foreign terms and constructs, then register calibration, then the mechanical sweep.
 
@@ -16,8 +16,8 @@ Language-marker rule families, then the typographic choreography for foreign ter
 The mid-sentence rhetorical em-dash is the single loudest AI marker. Default replacements, in order of preference: a comma, a colon, a period and new sentence, parentheses.
 
 Sanctioned uses, which stay:
-- **Series within a phrase**, paired dashes: "the three SOX ITGC domains — access, change, operations — over a recognized baseline".
-- **Structural labels and headers**: "Gate 1 — M1 to M4", "**Architect — Leadership.**".
+- **Series within a phrase**, paired dashes: "the three control domains — access, change, operations — over a recognized baseline".
+- **Structural labels and headers**: "Phase 1 — Weeks 1 to 4", "**Owner — Operations.**".
 - **Table placeholder cells** (`| — |`). Never count these as prose.
 - **At most one or two abrupt-change dashes per document**, kept only where the sentence is the argument's sharpest point: "visibility, not control — unusual for a platform in this category".
 
@@ -28,7 +28,7 @@ Treat even the sanctioned abrupt-change dash as a last resort, not a default opt
 Rewrite patterns from practice:
 - "it now says one — the register row was corrected and the sentence was not" → "it now says one. The register row was corrected; the sentence citing it was missed."
 - "grew by 23 to 32 against v2.0.2 — 43 to 58 against v1.2.0 — entirely from peer review" → "grew by 23 to 32 against v2.0.2 (43 to 58 against v1.2.0), entirely from peer review".
-- "Montevideo headquarters — relevant for the gate demonstrations" → "Montevideo headquarters, which is relevant for the gate demonstrations".
+- "the Lisbon office — relevant for the site demonstrations" → "the Lisbon office, which is relevant for the site demonstrations".
 
 ## 2. The antithesis reflex
 
@@ -69,9 +69,9 @@ Body text that narrates its own revision history or review process is changelog 
 Diff-talk markers to remove from body text: "is new", "rose to", "rises because", "now also carries", "since v1.2.0", "was added after review", "came from peer review", "the correction that matters most", "previously unpriced", "flagged in the changelog as". Self-referential process praise ("which this project has now demonstrated three times") is the same defect.
 
 Rewrites from practice:
-- "Four additions since v1.2.0, all from security review: secrets and service identity, ..." → "Beyond the substrate itself, M2 carries secrets and service identity, ...".
+- "Four additions since v1.2.0, all from security review: secrets and service identity, ..." → "Beyond the substrate itself, the second phase carries secrets and service identity, ...".
 - "That line rose to carry source authentication" → "The line includes source authentication".
-- "The interim metrics view is new. Full reporting lands at M10 while ..." → "The interim metrics view exists because full reporting lands at M10 while ...".
+- "The interim metrics view is new. Full reporting lands in the final phase while ..." → "The interim metrics view exists because full reporting lands in the final phase while ...".
 - "Security advisory rises because the control set is now ours to author" → "Security advisory covers authorship of the control set, not review against one supplied".
 
 Changelogs are exempt: describing diffs is their function.
@@ -156,7 +156,7 @@ Two conventions distinguish borrowed vocabulary from vocabulary the text itself 
 
 Example: "what follows, the analysis treats as a **Boundary Condition**: a constraint imposed from outside the system that the system cannot revise from within. A Boundary Condition, once identified, changes what counts as a legitimate move inside the system." The shift from bold-at-definition to Capitalized-thereafter is the point; reverting to lowercase after the definition erases the distinction the choreography exists to mark, and re-bolding later occurrences confuses definition with mere emphasis.
 
-This choreography applies to constructs original to the piece, FOAM's own terms, a distinction an essay draws for the first time, a category proposed inside an architecture document, and not to vocabulary already governed by an external convention: *Enterprise Architecture* stays capitalized because the discipline capitalizes it, not because this rule does; ordinary philosophical vocabulary (ethics, praxis, telos) stays lowercase unless the text is itself redefining the term as a construct.
+This choreography applies to constructs original to the piece, the author's own terms, a distinction an essay draws for the first time, a category proposed inside an architecture document, and not to vocabulary already governed by an external convention: *Enterprise Architecture* stays capitalized because the discipline capitalizes it, not because this rule does; ordinary philosophical vocabulary (ethics, praxis, telos) stays lowercase unless the text is itself redefining the term as a construct.
 
 ## Order of operations on any writing or editing task
 
