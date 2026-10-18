@@ -2,7 +2,7 @@
 name: stricter-ai-language-hygiene
 description: Enforce strict AI-marker hygiene on every piece of prose Claude produces or edits, including typographic treatment of foreign terms (italics) and of concepts/constructs introduced by the text (bold at definition, Capitalized thereafter). Apply this skill whenever generating or revising ANY artifact (documents, reports, proposals, architecture docs, narratives, README files, commit messages, changelogs) and whenever drafting ANY email, Teams, Slack, or chat message, even short ones, even when the user does not mention hygiene. The rules are standing practice, not a requested step. Also apply when the user asks for a "hygiene pass", "marker sweep", "de-AI", "make it sound human", mentions text reading as AI-generated, or asks for review of tone, style, or coherence in written material.
 metadata:
-  version: 1.1.1
+  version: "1.1.1"
 ---
 
 # Stricter AI-marked Language Hygiene

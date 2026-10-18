@@ -4,7 +4,7 @@ description: Audit an arc42 document set (architecture, estimate, README, conven
 compatibility: Python 3.9 or later, standard library only. Reads tools/audit-config.json at the repository root.
 allowed-tools: Bash(python3:*) Read Glob Grep
 metadata:
-  version: 0.2.0
+  version: "0.2.1"
 ---
 
 # Architecture Set Audit

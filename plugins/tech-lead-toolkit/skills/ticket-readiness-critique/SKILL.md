@@ -2,7 +2,7 @@
 name: ticket-readiness-critique
 description: Critique a Jira ticket's readiness to enter a sprint or close, judging the ticket as an instrument (its story, scope, acceptance criteria, links, and metadata). Produces a structured critique (What Works, Must-haves, Nice-to-haves, Entry Blockers) where metadata that misrepresents the ticket, such as an inverted priority, a status contradicting the MR, or an unmodeled dependency, is flagged as a Must-have and never as a footnote. Use whenever the user asks to critique, check, review, groom, or sanity-check a ticket or story, asks "is this ready for the sprint", "can an engineer pick this up", or "check it" or "again" on a ticket critiqued before, or hands over a ticket link or export for feedback.
 metadata:
-  version: 0.1.0
+  version: "0.1.1"
 ---
 
 # Ticket Readiness Critique

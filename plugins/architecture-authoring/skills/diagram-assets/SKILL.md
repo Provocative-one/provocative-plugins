@@ -4,7 +4,7 @@ description: Register, brief, build and accept the diagram assets of an arc42 do
 compatibility: Python 3.9 or later, standard library only. Reads tools/audit-config.json for the project prefix and the house palette. Rendering an SVG for visual review needs a renderer such as cairosvg or a browser.
 allowed-tools: Bash(python3:*) Read Write Edit Glob Grep
 metadata:
-  version: 0.1.0
+  version: "0.1.1"
 ---
 
 # Diagram Assets

@@ -4,7 +4,7 @@ description: Start, write, extend or refresh an arc42 architecture document that
 compatibility: Scripts need Python 3.9 or later and only the standard library. Expects a Git repository for the document set; the scaffold creates one's directory layout.
 allowed-tools: Bash(python3:*) Read Write Edit Glob Grep
 metadata:
-  version: 0.2.0
+  version: "0.2.1"
 ---
 
 # arc42 Architecture Document

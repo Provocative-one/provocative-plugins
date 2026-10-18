@@ -3,7 +3,7 @@ name: agent-division-of-labor
 description: Govern how two or more agents (for example Claude Code with a shell and git, and Cowork or a chat session that can render documents but has no shell where the repository lives) share one document repository. Assigns one writing agent per file, turns every change an agent wants in a file it does not own into a proposal block the owner applies, records each agent's capabilities as observed, keeps transient handoffs out of the repository, and writes the untracked HANDOFF.md that lets the next session resume. Use whenever the user sets up or revises the division of work between agents on a repository, asks who may edit a file, wants to propose a change to a file another agent owns, asks for project instructions for Cowork or Claude Code, or asks for a handoff so the next session can continue.
 compatibility: Applies to any Git repository edited by more than one agent. No scripts.
 metadata:
-  version: 0.2.0
+  version: "0.2.1"
 ---
 
 # Agent Division of Labor

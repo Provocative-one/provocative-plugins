@@ -3,7 +3,7 @@ name: sibling-estimate-document
 description: Build and maintain the estimate that prices an arc42 architecture, as a second arc42 document that depends one way on it. Calibrates an effort unit against a measured build, keys the backlog on components against milestones, writes milestones with exit criteria someone outside the project can check, keeps estimate assumptions, estimating decisions and estimate risks in their own registers, states sensitivity in a fixed order, and pins the architecture version it was derived from. Use whenever the user asks for an estimate, effort model, staffing model or allocation, to price an architecture, calibrate against a proof of concept or prior build, size milestones in person-weeks, ask what a milestone costs, turn an architecture into a plan, or reconcile the estimate after the architecture changed. Do not use for a commercial price or rate; the estimate prices effort and leaves money to the commercial owner.
 compatibility: Uses register_tools.py from the arc42-architecture-document skill and audit.py from the architecture-set-audit skill when the plugin is installed. Python 3.9 or later.
 metadata:
-  version: 0.2.0
+  version: "0.2.1"
 ---
 
 # Sibling Estimate Document

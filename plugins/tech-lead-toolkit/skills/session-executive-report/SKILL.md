@@ -2,7 +2,7 @@
 name: session-executive-report
 description: Convert a meeting recording, VTT file, Teams transcript, or set of raw notes into a durable Markdown executive report that a non-attendee can read and act on. The report carries a prose executive summary, a participants table, numbered topics with blockers and resolution paths, sparse verbatim timestamped quotes, an action-items table with named owners, and live-link references. Use whenever the user supplies a transcript, VTT, recording link, or meeting notes and wants minutes, a session report, executive notes, a decision record of a meeting, or says "write up this call", even without the words executive report. Also use to revise or reissue an earlier session report.
 metadata:
-  version: 0.1.0
+  version: "0.1.1"
 ---
 
 # Session Executive Report

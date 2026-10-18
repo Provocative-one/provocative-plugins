@@ -3,7 +3,7 @@ name: client-facing-derivations
 description: Produce what a client reads from an internal arc42 document set without retyping it or leaking excluded content. Generates the offer traceability annex by origin class, the assumptions and exclusions annex projected from the registers, the milestone plan with acceptance evidence, decks and one-pagers, and clarification-round answers anchored to register rows with an owner flag on every commitment and a reissue list. Every derivative names the document versions it was generated from, has a brief recording what was built and on what basis, and is published as a new versioned file, never edited after sending. Use whenever the user asks for a deck, annex, appendix, traceability map, assumptions and exclusions list, milestone plan for the client, a client-facing version of the architecture, a plain version for the client, answers to clarification questions, or "what did we actually say in the proposal about".
 compatibility: Uses register_tools.py and audit.py from sibling skills when the plugin is installed. Word output goes through the docx skill; slides through the pptx skill or a slide artifact type.
 metadata:
-  version: 0.2.0
+  version: "0.2.1"
 ---
 
 # Client-facing Derivations

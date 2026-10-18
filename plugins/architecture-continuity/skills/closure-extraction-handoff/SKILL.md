@@ -2,7 +2,7 @@
 name: closure-extraction-handoff
 description: Preserve knowledge so it survives the people who hold it, in two modes. Extract mode turns a living source set (Confluence pages, Notion exports, design documents, ADRs) into a durable knowledge pack with one subject per file, recorded sources and currency, flagged supersessions, a stated authority, a README index, and an audit script. Handoff mode builds a self-sufficient resume package from an in-progress conversation or engagement, so a fresh Claude instance or a successor can continue with no dependency on memory, prior turns, or connector access. Use whenever the user mentions an engagement closing, rolling off, leaving a team, knowledge transfer, handoff, closure documentation, archiving or extracting pages, "export this so I can continue elsewhere", "summarize everything so a new session can pick up", or making a body of work survive after its authors depart.
 metadata:
-  version: 0.1.0
+  version: "0.1.1"
 ---
 
 # Closure Extraction and Handoff

@@ -2,7 +2,7 @@
 name: story-and-gherkin-drafting
 description: Draft a paste-ready Jira story, or a ranked backlog of stories, that an engineer can execute without reconstructing context, together with its acceptance criteria written as Gherkin scenarios covering both the success path and the failure path. Use whenever the user asks to write, draft, rewrite, or split a story, ticket, backlog, or epic breakdown, asks for acceptance criteria or Given/When/Then scenarios, wants a Definition of Done stated as observable behavior, or asks to turn a discussion, ADR, or review finding into stories, even without naming Gherkin. For critiquing an existing ticket instead of drafting one, use ticket-readiness-critique.
 metadata:
-  version: 0.1.0
+  version: "0.1.1"
 ---
 
 # Story and Gherkin Drafting

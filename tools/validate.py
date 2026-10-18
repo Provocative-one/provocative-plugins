@@ -50,6 +50,10 @@ def check_skill(path, label):
     ver = str(meta.get("version", "")) if isinstance(meta, dict) else ""
     if not SEMVER.match(ver):
         warns.append(f"{label}: no semantic metadata.version")
+    else:
+        raw = re.search(r"^[ \t]+version:[ \t]*(.*?)[ \t]*$", (path / "SKILL.md").read_text(encoding="utf-8"), re.M)
+        if not raw or not re.fullmatch(r'"[^"]*"', raw.group(1)):
+            fails.append(f"{label}: metadata.version must be written as a quoted string")
 
 
 def main():

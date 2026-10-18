@@ -2,7 +2,7 @@
 name: atlassian-review-comment
 description: Draft a paste-ready Jira or GitLab merge-request review comment that gates a body of work (an MR, a module, a policy, a pipeline change, a document) against its acceptance criteria, grading every finding Must-have, Nice-to-have, or Out of scope. Use whenever the user asks to review an MR or a ticket's deliverable, produce a review comment, run a baseline, re-review, or final pass, check whether work is ready to merge or close, or says "review this against the ACs", even if the format is never named. Carries the Atlassian paste mechanics (ADF list nesting, unfenced Markdown, the code-span link quirk) that plain drafting gets wrong, and checks the version the work declares against the change it contains.
 metadata:
-  version: 0.1.0
+  version: "0.1.1"
 ---
 
 # Atlassian Review Comment

@@ -2,7 +2,7 @@
 name: c4-diagram-package
 description: Build, refresh, or critique a C4 architecture documentation package. It produces Mermaid diagrams (system context, container view, component slices) under a uniform state-encoding grammar (present, sunsetting, planned, partial, parked, superseded) so an estate in transition shows what is real, arriving, retiring, and deferred in one picture. Each diagram has a source-of-record `.mmd`, a narrated companion, and a README index. Use whenever the user asks for C4 diagrams, a system context or container view, component diagrams, Mermaid or Lucid architecture documentation, an as-is/to-be architecture baseline, or a diagram set for an architecture handoff or closure, or says "document the architecture", "draw the platform", or "update the C4". Includes an audit script that catches drift between diagram sources and their companions.
 metadata:
-  version: 0.1.0
+  version: "0.1.1"
 ---
 
 # C4 Diagram Package

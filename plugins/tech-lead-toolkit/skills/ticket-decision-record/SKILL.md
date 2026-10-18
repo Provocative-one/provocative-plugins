@@ -2,7 +2,7 @@
 name: ticket-decision-record
 description: Draft a paste-ready Jira comment that puts a decision on the record, in one of two modes. A Direction comment authorizes an agreed technical or architectural approach before build begins and states the reasoning that makes it defensible later. An Awareness comment transcribes an off-ticket exchange (a Teams thread, a meeting, a hallway alignment) onto the story it governs, with attribution and live links back to the source. Use whenever the user wants to record an agreed approach, settle a design question on a ticket, mirror a Teams or meeting decision into Jira, capture a stakeholder's position, or says "make this visible on the ticket", "write the direction comment", or "put this on the record", even when neither word direction nor awareness is used. Also use for the paired form, awareness on the parent ticket plus direction on the implementation story.
 metadata:
-  version: 0.1.0
+  version: "0.1.1"
 ---
 
 # Ticket Decision Record

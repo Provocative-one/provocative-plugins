@@ -3,7 +3,7 @@ name: evidence-and-registers
 description: Decide where a statement in an architecture or estimate document comes from, and file what has no source yet. Marks inferences with [I], files assumptions and open items as [A-nn] with an owner and a closure condition, converts an open item into a priced estimate assumption [EA-nn], opens and maintains decision, risk, component and quality registers, and refuses to close an entry or renumber a register without new evidence. Use whenever the user asks whether something is traceable, whether a claim is an assumption or an inference, asks to mark a statement, add something to a register, open a risk or decision register, close or withdraw an entry such as "close [A-07]", find who owns an assumption, or adds any fact to a document governed by registers. Do not use for general fact-checking outside a register-governed document set.
 compatibility: Works on any Markdown document set that declares its sources in front matter. No scripts of its own; ID allocation and citation search use register_tools.py from the arc42-architecture-document skill when the plugin is installed.
 metadata:
-  version: 0.2.0
+  version: "0.2.1"
 ---
 
 # Evidence and Registers
