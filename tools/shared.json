@@ -1,0 +1,65 @@
+{
+  "_comment": "Each entry maps one canonical source under shared/ to every committed copy. A copy is never edited in place: edit the source and run python tools/sync.py --write. 'standalone' lists every skill folder also built as a .skill file, from plugins/ or from shared/skills/.",
+  "shared": [
+    {
+      "source": "shared/skills/stricter-ai-language-hygiene",
+      "copies": [
+        "plugins/tech-lead-toolkit/skills/stricter-ai-language-hygiene",
+        "plugins/architecture-continuity/skills/stricter-ai-language-hygiene",
+        "plugins/architecture-authoring/skills/stricter-ai-language-hygiene"
+      ]
+    },
+    {
+      "source": "shared/skills/blunt-critique",
+      "copies": [
+        "plugins/tech-lead-toolkit/skills/blunt-critique",
+        "plugins/architecture-continuity/skills/blunt-critique",
+        "plugins/architecture-authoring/skills/blunt-critique"
+      ]
+    },
+    {
+      "source": "shared/skills/semantic-versioning",
+      "copies": [
+        "plugins/tech-lead-toolkit/skills/semantic-versioning",
+        "plugins/architecture-continuity/skills/semantic-versioning",
+        "plugins/architecture-authoring/skills/semantic-versioning"
+      ]
+    },
+    {
+      "source": "shared/substrates/ticket-record.md",
+      "copies": [
+        "plugins/tech-lead-toolkit/skills/atlassian-review-comment/references/shared-substrate.md",
+        "plugins/tech-lead-toolkit/skills/ticket-decision-record/references/shared-substrate.md",
+        "plugins/tech-lead-toolkit/skills/session-executive-report/references/shared-substrate.md",
+        "plugins/tech-lead-toolkit/skills/ticket-readiness-critique/references/shared-substrate.md",
+        "plugins/tech-lead-toolkit/skills/story-and-gherkin-drafting/references/shared-substrate.md",
+        "plugins/architecture-continuity/skills/c4-diagram-package/references/shared-substrate.md",
+        "plugins/architecture-continuity/skills/closure-extraction-handoff/references/shared-substrate.md"
+      ]
+    },
+    {
+      "source": "shared/substrates/architecture-authoring.md",
+      "copies": [
+        "plugins/architecture-authoring/skills/evidence-and-registers/references/shared-substrate.md",
+        "plugins/architecture-authoring/skills/arc42-architecture-document/references/shared-substrate.md",
+        "plugins/architecture-authoring/skills/sibling-estimate-document/references/shared-substrate.md",
+        "plugins/architecture-authoring/skills/architecture-set-audit/references/shared-substrate.md",
+        "plugins/architecture-authoring/skills/client-facing-derivations/references/shared-substrate.md",
+        "plugins/architecture-authoring/skills/agent-division-of-labor/references/shared-substrate.md",
+        "plugins/architecture-authoring/skills/diagram-assets/references/shared-substrate.md"
+      ]
+    }
+  ],
+  "standalone": [
+    "plugins/tech-lead-toolkit/skills/atlassian-review-comment",
+    "plugins/tech-lead-toolkit/skills/ticket-decision-record",
+    "plugins/tech-lead-toolkit/skills/session-executive-report",
+    "plugins/tech-lead-toolkit/skills/ticket-readiness-critique",
+    "plugins/tech-lead-toolkit/skills/story-and-gherkin-drafting",
+    "plugins/architecture-continuity/skills/c4-diagram-package",
+    "plugins/architecture-continuity/skills/closure-extraction-handoff",
+    "shared/skills/stricter-ai-language-hygiene",
+    "shared/skills/blunt-critique",
+    "shared/skills/semantic-versioning"
+  ]
+}

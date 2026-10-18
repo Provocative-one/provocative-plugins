@@ -1,0 +1,8 @@
+#!/bin/sh
+# Installed with: git config core.hooksPath tools/hooks
+# Regenerates the README index, stages it, then runs every check.
+PY=$(command -v python3 || command -v python)
+[ -z "$PY" ] && PY="py -3"
+$PY tools/index.py --write || exit 1
+git add README.md
+$PY tools/check.py
