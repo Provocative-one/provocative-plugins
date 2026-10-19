@@ -44,6 +44,33 @@
         "Does not commit or push"
       ],
       "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Repository facts: CLAUDE.md has a 'Who writes what' section and no line declaring a handoff mode. An untracked HANDOFF.md from the last session sits at the root, and .gitignore lists it. This session, as the shell-capable agent, registered one component and left [A-04] open for the owner. Hand off to the next session.",
+      "expected_output": "Resolves to fallback mode without reopening the question, and overwrites the untracked HANDOFF.md.",
+      "assertions": [
+        "Treats fallback mode as in force and says that the untracked HANDOFF.md is not a declaration of any mode",
+        "Does not offer working-log mode, ask which mode the repository wants, or reopen the question",
+        "Overwrites HANDOFF.md with the uncommitted changes and a ready commit message, the open decision [A-04] with its owner, and the next work in order",
+        "Does not create a unit, a pointer or an awareness unit",
+        "Does not commit HANDOFF.md and keeps it listed in .gitignore"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Repository facts: CLAUDE.md declares working-log mode in its handoff-mode line. The working-log holds units up to 0.4.1, which is the tip. Claude Code's pointer is at 0.4.1 and Cowork's is at 0.4.0. This session, as Claude Code, added a seventh component to the architecture and decided that a message queue is needed, which calls for a decision record. The estimate refresh is left for Cowork. Hand off.",
+      "expected_output": "Closes a unit instead of writing HANDOFF.md, records the estimate refresh in Leaves open, and advances Claude Code's own pointer.",
+      "assertions": [
+        "Closes a new unit for the episode with the five fields Implements, Succeeds, Supersedes / Obsoletes, Presupposes and Leaves open, with Implements and Leaves open filled",
+        "Gives the unit the next version after 0.4.1 and sets Succeeds to the 0.4.1 tip",
+        "Records the estimate refresh for Cowork in the unit's Leaves open field",
+        "Records the need for a decision record as an open item with a composite identifier of the form m.n.p#A-a, such as 0.4.2#A-1, and creates no decision identifier",
+        "Advances Claude Code's own pointer to the new unit and leaves Cowork's pointer at 0.4.0",
+        "Does not write or overwrite HANDOFF.md, and does not edit any existing unit"
+      ],
+      "files": []
     }
   ]
 }
