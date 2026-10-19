@@ -1,0 +1,6 @@
+#!/bin/sh
+# Installed with: git config core.hooksPath tools/hooks
+# Rejects a commit message that is not a Conventional Commit with What, Why and How.
+PY=$(command -v python3 || command -v python)
+[ -z "$PY" ] && PY="py -3"
+$PY tools/commit_msg.py "$1"

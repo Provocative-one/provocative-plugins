@@ -1,0 +1,46 @@
+{
+  "skill_name": "atlassian-review-comment",
+  "should_trigger": [
+    "Review MR !42 against the acceptance criteria of PROJ-101 and give me the Jira comment.",
+    "Baseline review of this Terraform module, please.",
+    "The author pushed fixes for my two must-haves; re-review the diff.",
+    "Is this merge request ready to merge?",
+    "Draft the GitLab review comment with Must-haves and Nice-to-haves.",
+    "Final pass on the policy MR before we close the story."
+  ],
+  "should_not_trigger": [
+    "Is PROJ-301 ready to enter the sprint?",
+    "Write the direction comment settling the smoke-test approach.",
+    "Critique my essay draft.",
+    "Explain what a merge request is.",
+    "Write release notes for version 2.3.",
+    "Turn this review finding into a story with Gherkin ACs."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review this MR against PROJ-101's acceptance criteria: 'AC1: the storage module accepts an allowlist of IP ranges. AC2: the module is tagged per semantic versioning.' The diff removes the input variable `allowed_ips`, adds `ip_rules`, and the MR tags the release v1.4.1. Baseline pass. Give me the Jira comment.",
+      "expected_output": "A paste-ready baseline review comment in the house structure, flagging the under-declared version as a Must-have.",
+      "assertions": [
+        "Uses the three-tier legend: Must-have, Nice-to-have, Out of scope; never 'Should-have'",
+        "Flags v1.4.1 as under-declared: removing an input callers use is MAJOR, so the fix is v2.0.0",
+        "States the interface expectation broken in one sentence",
+        "Every Merge Blockers row traces to a Must-have, and the counts match",
+        "Explanatory prose sits inside its numbered item",
+        "No @-mentions and no relative dates",
+        "Does not post the comment anywhere"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Final pass. The author fixed both must-haves from my comment 9126599: the release is now tagged v2.0.0 with a changelog entry, and the AC2 test now covers the empty-list case. Give me the final-pass comment.",
+      "expected_output": "A final-pass comment declaring no remaining must-haves.",
+      "assertions": [
+        "Omits the 'What Could Be Done Differently' and 'Recommendations' sections",
+        "What's Good confirms each fix with a (previously: ...) tag",
+        "States 'No remaining must-haves' and names what was checked",
+        "Leaves a traceability slot referring to comment 9126599"
+      ]
+    }
+  ]
+}

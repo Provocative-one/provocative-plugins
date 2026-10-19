@@ -1,0 +1,24 @@
+{
+  "name": "provocative-plugins",
+  "owner": {
+    "name": "Ronaldo Arrudas",
+    "email": "ronaldo@provocative.one"
+  },
+  "plugins": [
+    {
+      "name": "tech-lead-toolkit",
+      "source": "./plugins/tech-lead-toolkit",
+      "description": "Review comments, decision records, session reports, ticket critiques, and stories with Gherkin ACs, with blunt critique, semantic-versioning classification, and language hygiene embedded."
+    },
+    {
+      "name": "architecture-continuity",
+      "source": "./plugins/architecture-continuity",
+      "description": "C4 diagram packages under a state-encoding grammar, and closure extraction and handoff packages, with blunt critique, semantic-versioning classification, and language hygiene embedded."
+    },
+    {
+      "name": "architecture-authoring",
+      "source": "./plugins/architecture-authoring",
+      "description": "arc42 architecture and estimate documents under an evidence discipline, with registers, diagram assets, a coherence audit, client-facing derivations and an agent contract; embeds blunt critique, semantic versioning and language hygiene."
+    }
+  ]
+}

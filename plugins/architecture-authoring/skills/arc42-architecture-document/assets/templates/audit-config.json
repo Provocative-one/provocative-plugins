@@ -1,0 +1,21 @@
+{
+  "project_prefix": "{{PREFIX}}",
+  "living_dir": "arc42",
+  "documents": {
+    "architecture": "arc42/{{prefix}}-architecture-arc42.md",
+    "estimate": "arc42/{{prefix}}-estimate-arc42.md"
+  },
+  "also_read": ["README.md", "CLAUDE.md", "CHANGELOG.md"],
+  "series": {"A": "architecture", "AD": "architecture", "R": "architecture", "Q": "architecture", "C": "architecture",
+             "EA": "estimate", "ED": "estimate", "ER": "estimate", "M": "estimate"},
+  "cited_required": ["C", "EA", "M", "ED", "ER"],
+  "retired_prefixes": ["CA"],
+  "rogue_terms": [],
+  "vocabulary": [],
+  "diagram_palette": [],
+  "client_forbidden_terms": ["person-day", "person-days", "staffing", "rate card"],
+  "pointers": [
+    {"file": "README.md", "pattern": "Architecture (\\d+\\.\\d+\\.\\d+)", "document": "architecture"},
+    {"file": "README.md", "pattern": "Estimate (\\d+\\.\\d+\\.\\d+)", "document": "estimate"}
+  ]
+}

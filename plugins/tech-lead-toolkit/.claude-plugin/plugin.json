@@ -1,0 +1,8 @@
+{
+  "name": "tech-lead-toolkit",
+  "version": "0.1.1",
+  "description": "Drafting and review skills for tech leads and architects who keep the written record of an engineering effort: Jira and GitLab review comments, decision records, session reports, ticket critiques, and stories with Gherkin acceptance criteria, with blunt critique, semantic-versioning classification, and AI-marker language hygiene built into each.",
+  "author": {
+    "name": "Ronaldo Arrudas"
+  }
+}

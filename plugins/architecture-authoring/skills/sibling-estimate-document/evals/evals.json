@@ -1,0 +1,49 @@
+{
+  "skill_name": "sibling-estimate-document",
+  "should_trigger": [
+    "Price this architecture.",
+    "Build the effort model against the PoC commit history.",
+    "What does M2 cost in person-weeks?",
+    "Turn the architecture into a milestone plan with effort.",
+    "The architecture moved to 1.2.0; does the estimate need re-deriving?",
+    "Staffing and allocation for the build."
+  ],
+  "should_not_trigger": [
+    "What day rate should we charge?",
+    "Write the architecture document.",
+    "Make the client-facing milestone plan.",
+    "Estimate how long this SQL query takes.",
+    "Is the architecture's component list complete?",
+    "Turn the milestone plan into a deck for the client.",
+    "How many story points is this ticket?"
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Given the fixture architecture at 0.3.1, write a second estimate that calibrates on a 15 person-day pilot, keeping the one-way rule.",
+      "expected_output": "A second estimate document pinned to architecture 0.3.1, anchored on the 15 person-day pilot, with the architecture left untouched.",
+      "assertions": [
+        "Writes a separate estimate document and does not alter the architecture or overwrite the existing estimate",
+        "The 'Estimates against' row names architecture 0.3.1, and the document cites architecture rows ([C-nn], [A-nn], [AD-nn]) while the architecture gains no citation of an [EA-nn], [ED-nn], [ER-nn] or [M-nn]",
+        "Registers the unit as [EA-01] with the 15 person-day pilot as evidence and states every figure as a multiple of it",
+        "The backlog has one row per component per milestone covering all six components, with build status, effort in the unit and the register entries each row leans on",
+        "Effort and client lead time sit in different columns, client gates appear as preconditions with named owners and decision timeframes, and each milestone has an exit criterion an outsider can check",
+        "States no price, rate or currency amount"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "The fixture architecture moves from 0.3.1 to 0.4.0 because a seventh component is added. The estimate is at 0.2.0 and pins architecture 0.3.0. Does the estimate need re-deriving, and how is the estimate versioned?",
+      "expected_output": "A ruling that the pin is broken, with the re-derivation steps and a classified estimate bump.",
+      "assertions": [
+        "States that the pin is broken, because a MINOR below 1.0.0 may carry breaking changes",
+        "Says the estimate is re-derived against 0.4.0 and re-pinned, not merely re-labelled",
+        "Notes the earlier move from 0.3.0 to 0.3.1 was a PATCH and left the pin intact",
+        "Requires the new component to appear in the backlog, with build status and effort in SBE",
+        "Classifies the estimate's own bump with one sentence naming the interface expectation preserved or broken, and says a commit that only advances the pin is a PATCH"
+      ],
+      "files": []
+    }
+  ]
+}

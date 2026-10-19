@@ -1,0 +1,51 @@
+{
+  "skill_name": "client-facing-derivations",
+  "should_trigger": [
+    "Make a three-slide deck from the estimate.",
+    "Generate the assumptions and exclusions annex.",
+    "Build Appendix 5, the traceability annex.",
+    "Answer the client's clarification questions from the registers.",
+    "A plain version of the milestones for the client.",
+    "What did we actually say in the proposal about integration?"
+  ],
+  "should_not_trigger": [
+    "Add an assumption to the register.",
+    "Audit the set.",
+    "Write the architecture's §5.",
+    "Translate this paragraph into Portuguese.",
+    "Run the coherence check on the set.",
+    "Calibrate the effort unit on the pilot.",
+    "Open a decision register for the architecture.",
+    "Draft a Slack message to the client lead asking for the staff list."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "From the fixture, produce the assumptions and exclusions annex for the Trust, its brief, and the derived-mode audit result.",
+      "expected_output": "A numbered, plain-register annex projected from the open assumptions with a brief pinning the source versions and a zero-FAIL derived-mode audit.",
+      "assertions": [
+        "Names the sources it was generated from: architecture 0.3.1 and estimate 0.2.0",
+        "Projects the items from the registers (register_tools.py project), omits terminal rows (the closed [A-04] and the withdrawn [A-09]), and numbers the items",
+        "Each item states the assumption and the consequence if it fails, grouped by theme",
+        "The annex text contains no register ID, marker, asset ID or placeholder, and no content from excluded sections (the incumbent agency, the fixed budget, staffing)",
+        "Writes a brief recording request, derivations, traceability, divergence from the sources and the pinned versions, and reports a zero-FAIL result from audit.py --derived",
+        "Publishes as a new versioned file under published/ and never edits an earlier sent version"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "The Trust's letter asks two questions. Q1: will Welsh pages be live when the first milestone closes? Q2: how many weeks will the Collections Explorer milestone take? Answer from the fixture registers.",
+      "expected_output": "A clarification table with client-register answers anchored to register rows, an owner on the duration commitment, and a reissue list.",
+      "assertions": [
+        "Uses a table with Question, Answer, Anchored to, Commitment owner and Written or Call columns",
+        "Q1 answers that Welsh pages ship with the third milestone, not the first, and anchors to the Welsh onboarding assumption and the milestone content",
+        "Q2 converts the milestone's 2.0 SBE through 2.5 weeks per SBE to 5 weeks and shows the conversion",
+        "The duration commitment carries an owner from the README owner table (Lena Okafor for staffing and dates) and states no price",
+        "The answer wording contains no register IDs, while the Anchored to column may",
+        "Ends with the reissue list of annex items and passages the answers change"
+      ],
+      "files": []
+    }
+  ]
+}

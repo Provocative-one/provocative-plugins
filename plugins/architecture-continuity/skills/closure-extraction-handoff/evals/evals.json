@@ -1,0 +1,44 @@
+{
+  "skill_name": "closure-extraction-handoff",
+  "should_trigger": [
+    "I'm rolling off on Friday; extract these Confluence pages into a knowledge pack.",
+    "Export this conversation so a fresh session can pick up where we stopped.",
+    "Knowledge transfer package for the team taking over.",
+    "Make this work survive after we all leave.",
+    "Closure documentation for the engagement."
+  ],
+  "should_not_trigger": [
+    "Summarize this Confluence page.",
+    "Write the HANDOFF.md for this repository so the next agent session continues.",
+    "Archive these emails.",
+    "Write minutes for today's call.",
+    "Draft the architecture document."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Two pages. Page 101 (v3, 2 Sep 2026): 'The collector runs as one source per workspace.' Page 102 (ADR, v5, 20 Sep 2026): 'The collector runs as a worker plus queue, replacing the per-workspace design.' Story PROJ-410 is marked Done although its signing step was never proven. Extract a pack.",
+      "expected_output": "A pack with a README, two subject files and an open-gaps register, auditing clean.",
+      "assertions": [
+        "Each subject file opens with a Source line",
+        "Page 101's file carries an Extraction note saying page 102 governs on the collector",
+        "Nothing is reconciled silently",
+        "The open-gaps register records PROJ-410 as a disposition-accuracy concern",
+        "The README states authority: the live sources remain authoritative",
+        "audit_pack.py reports 0 FAIL"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Export this review so a fresh Claude session can resume it. Two concerns from round one were retired in round two; three threads remain open.",
+      "expected_output": "A single self-sufficient handoff file.",
+      "assertions": [
+        "Part 2 reproduces sources verbatim and discloses every edit",
+        "Part 4 states the consolidated position and does not narrate rounds",
+        "The retired concerns appear with the evidence that retired them",
+        "Each open thread has a closure condition and a status",
+        "Contains no credentials and no reference to turns the reader cannot see"
+      ]
+    }
+  ]
+}

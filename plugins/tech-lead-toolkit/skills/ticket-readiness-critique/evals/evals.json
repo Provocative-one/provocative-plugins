@@ -1,0 +1,43 @@
+{
+  "skill_name": "ticket-readiness-critique",
+  "should_trigger": [
+    "Is PROJ-301 ready for the sprint?",
+    "Check it.",
+    "Groom this story before planning.",
+    "Can an engineer pick this ticket up?",
+    "Again, I fixed the priority and the ACs."
+  ],
+  "should_not_trigger": [
+    "Review this merge request against the ACs.",
+    "Write the story for the logging pipeline.",
+    "Prioritize the backlog for next quarter.",
+    "Critique the architecture document's section 4.",
+    "Write the direction comment for this ticket."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Ticket PROJ-301: priority Low; status Done; linked MR !55 has 'changes requested'; description says 'deliver a dual-view analysis of options' but the scope lists one option; no acceptance criteria. The planning session of 10 Oct 2026 ranked it first. Critique it.",
+      "expected_output": "A structured critique with Must-haves and Entry Blockers.",
+      "assertions": [
+        "Flags the inverted priority as a Must-have, citing the ranking",
+        "Flags status Done against changes requested as a Must-have",
+        "Flags the missing acceptance criteria as a Must-have",
+        "Flags the missing dual-view deliverable",
+        "Uses Nice-to-have and never Should-have",
+        "Every Entry Blockers row traces to a Must-have"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Again. Priority is now Highest and ACs are added. The sprint field still says Sprint 9, which closed last week.",
+      "expected_output": "A revision-round critique.",
+      "assertions": [
+        "Verifies each earlier Must-have at the field where it was raised",
+        "Finds the stale sprint assignment as new collateral",
+        "Does not reopen points already settled",
+        "Declares convergence only if nothing real remains"
+      ]
+    }
+  ]
+}

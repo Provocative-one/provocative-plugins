@@ -1,0 +1,76 @@
+{
+  "skill_name": "agent-division-of-labor",
+  "should_trigger": [
+    "Set up who edits what between Claude Code and Cowork on this repository.",
+    "Write the HANDOFF.md so the next session can continue.",
+    "I want to change the README but Cowork owns it; propose the change.",
+    "Give me paste-ready project instructions for the Cowork project.",
+    "Which agent should commit published files?"
+  ],
+  "should_not_trigger": [
+    "Build a knowledge pack for the engagement closure.",
+    "Assign Jira tickets to the team.",
+    "Write a RACI for the project.",
+    "Export this chat so I can continue elsewhere.",
+    "Write the changelog entry for architecture 0.4.0.",
+    "Summarize today's session in a message to the team.",
+    "Write a resume file that carries the open items across engagements, with the knowledge pack."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write the 'Who writes what' section and a HANDOFF.md for the fixture repository, assuming one shell-capable agent and one rendering agent.",
+      "expected_output": "A 'Who writes what' section with one writing agent per path, an observed-capabilities table, and an untracked HANDOFF.md in the house template.",
+      "assertions": [
+        "Gives a table in which every path has exactly one writing agent; no path lists two",
+        "Assigns arc42/, CHANGELOG.md, README.md and tools/ to the shell-capable agent and briefs/ and generated/ to the rendering agent",
+        "Splits published/ between the agent that builds and the agent that commits",
+        "Includes a capabilities table written as observed on this repository, with Can and Cannot columns for each agent",
+        "States that a change to a file the agent does not own arrives as a proposal block and that handoffs do not become files",
+        "HANDOFF.md carries uncommitted changes with a ready commit message, open decisions with owners, next work in order and state checks, and is stated to be git-ignored and overwritten at each handoff"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Claude Code has just bumped the fixture architecture to 0.4.0 after registering a seventh component. README.md still says 'Architecture 0.3.1 · Estimate 0.2.0'. You are the Cowork session. Get the README right.",
+      "expected_output": "A proposal block addressed to the README's owner, not an edit of the file.",
+      "assertions": [
+        "Does not edit README.md and does not claim to have changed it",
+        "Produces a proposal block naming the file, an anchor, a replacement, a reason and what the change obligates",
+        "The anchor is the exact current text (the versions line or 'Architecture 0.3.1') and the replacement carries 0.4.0",
+        "The obligations include the changelog entry and a review of the estimate's pin, since a MINOR below 1.0.0 breaks the pin",
+        "Names the owning agent (shell and git) as the one who applies the block, runs the audit and commits",
+        "Does not commit or push"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Repository facts: CLAUDE.md has a 'Who writes what' section and no line declaring a handoff mode. An untracked HANDOFF.md from the last session sits at the root, and .gitignore lists it. This session, as the shell-capable agent, registered one component and left [A-04] open for the owner. Hand off to the next session.",
+      "expected_output": "Resolves to fallback mode without reopening the question, and overwrites the untracked HANDOFF.md.",
+      "assertions": [
+        "Treats fallback mode as in force and says that the untracked HANDOFF.md is not a declaration of any mode",
+        "Does not offer working-log mode, ask which mode the repository wants, or reopen the question",
+        "Overwrites HANDOFF.md with the uncommitted changes and a ready commit message, the open decision [A-04] with its owner, and the next work in order",
+        "Does not create a unit, a pointer or an awareness unit",
+        "Does not commit HANDOFF.md and keeps it listed in .gitignore"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Repository facts: CLAUDE.md declares working-log mode in its handoff-mode line. The working-log holds units up to 0.4.1, which is the tip. Claude Code's pointer is at 0.4.1 and Cowork's is at 0.4.0. This session, as Claude Code, added a seventh component to the architecture and decided that a message queue is needed, which calls for a decision record. The estimate refresh is left for Cowork. Hand off.",
+      "expected_output": "Closes a unit instead of writing HANDOFF.md, records the estimate refresh in Leaves open, and advances Claude Code's own pointer.",
+      "assertions": [
+        "Closes a new unit for the episode with the five fields Implements, Succeeds, Supersedes / Obsoletes, Presupposes and Leaves open, with Implements and Leaves open filled",
+        "Gives the unit the next version after 0.4.1 and sets Succeeds to the 0.4.1 tip",
+        "Records the estimate refresh for Cowork in the unit's Leaves open field",
+        "Records the need for a decision record as an open item with a composite identifier of the form m.n.p#A-a, such as 0.4.2#A-1, and creates no decision identifier",
+        "Advances Claude Code's own pointer to the new unit and leaves Cowork's pointer at 0.4.0",
+        "Does not write or overwrite HANDOFF.md, and does not edit any existing unit"
+      ],
+      "files": []
+    }
+  ]
+}

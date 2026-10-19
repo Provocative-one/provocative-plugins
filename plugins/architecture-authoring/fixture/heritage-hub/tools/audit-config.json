@@ -1,0 +1,69 @@
+{
+  "project_prefix": "HHB",
+  "living_dir": "arc42",
+  "documents": {
+    "architecture": "arc42/hhb-architecture-arc42.md",
+    "estimate": "arc42/hhb-estimate-arc42.md"
+  },
+  "also_read": [
+    "README.md",
+    "CLAUDE.md",
+    "CHANGELOG.md"
+  ],
+  "series": {
+    "A": "architecture",
+    "AD": "architecture",
+    "R": "architecture",
+    "Q": "architecture",
+    "C": "architecture",
+    "EA": "estimate",
+    "ED": "estimate",
+    "ER": "estimate",
+    "M": "estimate"
+  },
+  "cited_required": [
+    "C",
+    "EA",
+    "M",
+    "ED",
+    "ER"
+  ],
+  "retired_prefixes": [
+    "CA"
+  ],
+  "rogue_terms": [
+    "\\bnorthwind\\b"
+  ],
+  "vocabulary": [
+    {
+      "term": "Collections Explorer",
+      "forbidden": [
+        "collection portal",
+        "collections portal"
+      ]
+    }
+  ],
+  "client_forbidden_terms": [
+    "SBE",
+    "person-day",
+    "person-days",
+    "staffing",
+    "fixed fee"
+  ],
+  "pointers": [
+    {
+      "file": "README.md",
+      "pattern": "Architecture (\\d+\\.\\d+\\.\\d+)",
+      "document": "architecture"
+    },
+    {
+      "file": "README.md",
+      "pattern": "Estimate (\\d+\\.\\d+\\.\\d+)",
+      "document": "estimate"
+    }
+  ],
+  "diagram_palette": [
+    "#111111",
+    "#ffffff"
+  ]
+}

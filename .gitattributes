@@ -1,0 +1,8 @@
+# Keep bytes identical across Windows and Unix checkouts: sync, index and
+# build checks compare file contents exactly.
+* text=auto eol=lf
+*.svg text eol=lf
+*.png binary
+*.zip binary
+*.plugin binary
+*.skill binary

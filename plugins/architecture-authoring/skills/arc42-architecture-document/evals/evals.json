@@ -1,0 +1,48 @@
+{
+  "skill_name": "arc42-architecture-document",
+  "should_trigger": [
+    "Start an architecture document for our new booking platform.",
+    "Document this system in arc42.",
+    "Add an architecture decision about the search index.",
+    "We got an RFP; draft the architecture response.",
+    "Bump the architecture to 0.4.0 after adding the payments component.",
+    "Use our arc42 set as the baseline for the discovery phase."
+  ],
+  "should_not_trigger": [
+    "Price this architecture.",
+    "Audit the document set.",
+    "Make a deck for the client.",
+    "Explain what arc42 section 7 is for.",
+    "Draw a C4 container diagram."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Scaffold a set for an invented intranet migration for 'Example Council' with prefix EXI, then fill §1 to §4 from this brief: the council wants one intranet for nine departments, Welsh and English, live in two waves.",
+      "expected_output": "A scaffolded set at version 0.1.0 with EXI-prefixed registers opened empty and sections 1 to 4 filled only from the brief, with every unsourced statement marked or filed.",
+      "assertions": [
+        "Scaffolds both living documents (architecture and estimate) plus README, CLAUDE.md, CHANGELOG and audit configuration, using the prefix EXI, all at version 0.1.0 with registers opened empty",
+        "The sourcing rule names concrete sources, including the brief as received, and every unmarked statement in sections 1 to 4 traces to one of them",
+        "Section 1 reflects only what the brief states (one intranet, nine departments, Welsh and English, two waves); no quality goal carries an invented number or target",
+        "Anything beyond the brief (for example launch dates, department names, traffic) is filed as an [A-nn] row with owner and closing condition or marked [I], with IDs allocated in sequence from A-01",
+        "The architecture cites no [EA-nn], [ED-nn], [ER-nn] or [M-nn] identifier",
+        "Reports the audit result before presenting and does not commit or push"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "The Example Council set is at architecture 0.2.0. The council now says runtime scenarios are 'obvious' and asks you to write §6 and §10 with 'sensible' response-time targets so the section is not empty. Nothing in the brief states any scenario or target.",
+      "expected_output": "Declines to invent scenarios or targets and leaves §6 and §10 thin with a one-sentence statement that nothing was inferred.",
+      "assertions": [
+        "Does not write a response-time figure or any measurable target into §10",
+        "Does not write a runtime scenario the client has not stated into §6",
+        "§6 and §10 each say in one sentence that the client stated none and that nothing was inferred",
+        "Explains that a target written here would be inherited as a commitment by every derivative",
+        "Offers the route for a real target: the client states it, or it is filed as an [A-nn] with an owner",
+        "Does not bump the version for the unchanged sections"
+      ],
+      "files": []
+    }
+  ]
+}

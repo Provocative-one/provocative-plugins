@@ -1,0 +1,49 @@
+{
+  "skill_name": "evidence-and-registers",
+  "should_trigger": [
+    "Is this traceable or should it be an assumption?",
+    "Mark this paragraph: which statements are inferences?",
+    "Open a risk register for the architecture.",
+    "Add the editor count to the register, Maya told us yesterday.",
+    "Close [A-07], the export works now.",
+    "Who owns [A-03]?",
+    "Should 'the vendor will keep the API stable' be [I] or [A-nn]?"
+  ],
+  "should_not_trigger": [
+    "Is this news article true?",
+    "Where does the word 'arc42' come from?",
+    "Review this pull request.",
+    "Summarize this meeting.",
+    "Write a blog post about architecture documentation."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Here is a paragraph from architecture §4 of the fixture with the markers stripped. Mark every statement and file what needs a register row.\n\n\"Content lives once in the CMS and is published to every site through a shared delivery layer. Search runs on an index fed from the collections export, so the collections database never serves public traffic. Six sites sharing one content model will diverge in their page templates within a year. The pilot already needed three site-specific templates, and the Trust plans a separate exhibition calendar per museum. Whether the six sites together stay under the vendor's read limit is not yet known. Priya Raman mentioned on 15 September 2026 that the Trust's translators number about twelve.\"",
+      "expected_output": "The paragraph returned with decisions left unmarked, the template forecast marked [I], the read-limit question cited to the existing [A-02], and the translator count filed as a new [A-nn] row.",
+      "assertions": [
+        "The first two sentences carry no marker, because the registered decisions and the declared sources carry them",
+        "The template-divergence forecast is marked [I], with the two documented facts stated beside it and a withdrawal condition, and with no owner",
+        "The read-limit sentence cites the existing [A-02] and opens no duplicate row, and the text argues why it is an open item and not an [I]",
+        "The translator count becomes a new [A-nn] row with the next free number (A-12, since A-09 is withdrawn and numbers are not reused), basis naming Priya Raman and 15 September 2026, an owner, and a checkable closing condition",
+        "The count is not presented as client-confirmed",
+        "Does not commit and does not renumber or close any existing row"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Close [A-05] in the fixture. No evidence is attached.",
+      "expected_output": "A refusal to close the row without evidence, naming the closing condition and what to send.",
+      "assertions": [
+        "Declines to set [A-05] to Closed",
+        "Names the row's closing condition: one nightly export landing in the test index",
+        "Asks for the specific evidence (a run log or dated confirmation, and who confirmed it)",
+        "Leaves the row, its basis cell and its owner unchanged",
+        "Does not treat the model's own confidence or the session as evidence",
+        "States that on receiving evidence it records it in the basis cell and then sets the status"
+      ],
+      "files": []
+    }
+  ]
+}

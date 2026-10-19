@@ -1,0 +1,62 @@
+{
+  "skill_name": "blunt-critique",
+  "should_trigger": [
+    "Critique this draft.",
+    "Check it.",
+    "How about now? Here is version 3.",
+    "Give me feedback on this proposal and skip the cushioning.",
+    "Assess the argument in section 3 of my essay.",
+    "Review this deck and tell me what is wrong with it.",
+    "Again, I uploaded the revised framework."
+  ],
+  "should_not_trigger": [
+    "Is PROJ-412 ready to enter the sprint?",
+    "Review MR !42 against the acceptance criteria of PROJ-101 and give me the Jira comment.",
+    "Run the coherence check on the arc42 set.",
+    "Fix the typos in this paragraph.",
+    "Summarize this document in five bullets.",
+    "Write an essay on resilience in teams.",
+    "Proofread the abstract for grammar only."
+  ],
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Critique this opening of my essay on resilience.\n\n\"1. Definition. Resilience is what a team has when it keeps on-call rotations, runbooks, chaos drills, blameless postmortems and a supportive culture.\n2. Scope. Resilience is a property of individuals, never of systems. Depending on context it can coexist with fragility or not, and it may sometimes be measured.\n5. Measurement. Because resilience is a property of systems, we measure it through monthly uptime.\"",
+      "expected_output": "A critique that leads with the contradiction between sections 2 and 5, then the list definition and the unfalsifiable hedge, with no praise or cushioning.",
+      "assertions": [
+        "Leads with the most damaging finding, the contradiction between section 2 (individuals, never systems) and section 5 (a property of systems), with both passages quoted",
+        "Flags section 1 as a definition by example list and demands the boundary or admission test that the list lacks",
+        "Flags 'can coexist with fragility or not' as unfalsifiable and states what observation would count against the claim",
+        "Opens with no praise, summary or context, and contains no praise sandwich, 'great work, but', apology or encouraging close",
+        "Findings are stated as assertions, not as softened questions such as 'have you considered'",
+        "Ranks any prose-level point below the structural findings and labels trivial points as minor"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "How about now? Last round I flagged that section 2 contradicted section 5 and that section 1 defined resilience by a list. The revision: section 1 now reads \"Resilience is a system's capacity to return to its declared service level within a stated time after a fault; a practice such as a runbook counts only if it shortens that time.\" Section 2 now reads \"Resilience is a property of systems.\" The 'coexist' hedge is deleted. Section 5 is unchanged: \"Because resilience is a property of systems, we measure it through monthly uptime.\" A new section 7 repeats the section 1 definition word for word.",
+      "expected_output": "A revision critique that confirms the two fixes briefly, finds the new mismatch between the return-time definition and the uptime measure, and does not reopen settled points.",
+      "assertions": [
+        "Confirms in one or two lines that the contradiction and the list definition are fixed, without re-litigating them",
+        "Finds the new defect the fix created: section 5 measures uptime while section 1 now defines resilience as time to return to service level",
+        "Quotes the section 1 definition and the section 5 measure side by side",
+        "Notes that section 7 duplicates section 1 word for word and asks whether it can be cut because nothing depends on it",
+        "Does not declare the work converged while the mismatch stands, and does not praise beyond the specific confirmation of the fixes"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Check it: \"The export job runs nightly at 02:00 UTC and writes one file per day to the test bucket. A failed run is retried once after 30 minutes, then reported to the on-call channel.\"",
+      "expected_output": "A brief statement that the passage is clean and nothing needs changing, with no invented findings.",
+      "assertions": [
+        "States plainly and briefly that the passage is clean or done",
+        "Invents no finding and escalates no trivia to look thorough",
+        "Contains no praise sandwich, no flattery and no hedged findings",
+        "Any credit given is specific to the text and at most one or two lines"
+      ],
+      "files": []
+    }
+  ]
+}
