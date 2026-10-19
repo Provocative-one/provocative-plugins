@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.
 
 - `tools/commit_msg.py` and a `commit-msg` hook that require a Conventional Commit with What, Why and How paragraphs.
 - `validate.py` fails a skill whose `metadata.version` is not a quoted string.
+- `tools/release_tags.py`, which creates the annotated release tag of every plugin from its `plugin.json` and `CHANGELOG.md`, and pushes them on request.
 
 ### Changed
 - Marketplace owner gains the contact address `ronaldo@provocative.one`.
