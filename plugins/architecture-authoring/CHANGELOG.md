@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-19
+
+### Added
+- `agent-division-of-labor` 0.3.0 gains a second handoff mode. In working-log mode, a repository that carries a working-log under the Corponomia specification closes a unit for each episode of work and advances one pointer per surface, in place of `HANDOFF.md`. A line of `CLAUDE.md` declares the mode.
+- `references/working-log-mode.md` in that skill: a digest of Sections 6, 10.9 and 10.10 of the specification (unit anatomy, composite identifiers, central register, pointers, awareness unit).
+
+### Changed
+- Setup offers working-log mode once and records the answer. Fallback mode, which writes the untracked `HANDOFF.md`, stays the default, so a repository without a declaration behaves as before.
+
 ## [0.2.1] - 2026-10-18
 
 ### Added
@@ -33,6 +42,7 @@ The format is based on [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.
 - Embedded skills: `blunt-critique`, `semantic-versioning`, `stricter-ai-language-hygiene`, verbatim from their sources.
 - The Heritage Hub fixture and its regression run.
 
-[Unreleased]: https://github.com/Provocative-one/provocative-plugins/compare/architecture-authoring-v0.2.1...HEAD
+[Unreleased]: https://github.com/Provocative-one/provocative-plugins/compare/architecture-authoring-v0.3.0...HEAD
+[0.3.0]: https://github.com/Provocative-one/provocative-plugins/compare/architecture-authoring-v0.2.1...architecture-authoring-v0.3.0
 [0.2.1]: https://github.com/Provocative-one/provocative-plugins/compare/architecture-authoring-v0.2.0...architecture-authoring-v0.2.1
 [0.2.0]: https://github.com/Provocative-one/provocative-plugins/releases/tag/architecture-authoring-v0.2.0
